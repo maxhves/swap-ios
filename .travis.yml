@@ -1,5 +1,5 @@
 language:
   - swift
 osx_image: xcode11.3.1
-xcode_workspace: swap.xcworkspace
-xcode_destination: platform=iOS Simulator,OS=13.3.1,name=iPhone 11 Pro
+script:
+  - xcodebuild clean test -project swap.xcodeproj -scheme swap -destination "platform=iOS Simulator,name=iPhone 11,OS=13.3.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
