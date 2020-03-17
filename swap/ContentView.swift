@@ -34,7 +34,7 @@ struct ContentView: View {
                 Keypad()
                     .frame(height: geometry.size.height / 3)
                     .background(Color.backgroundAccent)
-                    .cornerRadius(32)
+                    .cornerRadius(ViewConstants.large)
                     .padding(.bottom, geometry.safeAreaInsets.bottom)
                     .padding(.leading)
                     .padding(.trailing)

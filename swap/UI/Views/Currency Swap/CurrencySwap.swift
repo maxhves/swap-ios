@@ -18,7 +18,7 @@ struct CurrencySwap: View {
                     .padding()
             }
             .background(Color.colorAccentPrimary)
-            .cornerRadius(32)
+            .cornerRadius(ViewConstants.large)
             
             // MARK: Swap Button
             Button(action: {}) {
@@ -27,7 +27,7 @@ struct CurrencySwap: View {
                     .padding()
             }
             .background(Color.backgroundAccent)
-            .cornerRadius(32)
+            .cornerRadius(ViewConstants.large)
             
             // MARK: Secondary Currency Button
             Button(action: {}) {
@@ -36,7 +36,7 @@ struct CurrencySwap: View {
                     .padding()
             }
             .background(Color.colorAccentSecondary)
-            .cornerRadius(32)
+            .cornerRadius(ViewConstants.large)
             
         }
     }
