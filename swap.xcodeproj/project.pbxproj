@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		503799BA242003030080C5F7 /* swapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799B9242003030080C5F7 /* swapUITests.swift */; };
+		503799C5242009160080C5F7 /* Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799C4242009160080C5F7 /* Keypad.swift */; };
+		503799C82420A6D30080C5F7 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799C72420A6D30080C5F7 /* GridStack.swift */; };
 		508CB7E2241FDA7600AE8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E1241FDA7600AE8DED /* AppDelegate.swift */; };
 		508CB7E4241FDA7600AE8DED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E3241FDA7600AE8DED /* SceneDelegate.swift */; };
 		508CB7E6241FDA7600AE8DED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E5241FDA7600AE8DED /* ContentView.swift */; };
@@ -30,6 +32,8 @@
 		503799B7242003030080C5F7 /* swapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		503799B9242003030080C5F7 /* swapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swapUITests.swift; sourceTree = "<group>"; };
 		503799BB242003030080C5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		503799C4242009160080C5F7 /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
+		503799C72420A6D30080C5F7 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		508CB7DE241FDA7600AE8DED /* swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508CB7E1241FDA7600AE8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		508CB7E3241FDA7600AE8DED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,39 @@
 			path = swapUITests;
 			sourceTree = "<group>";
 		};
+		503799C1242008CC0080C5F7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				503799C2242008DD0080C5F7 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		503799C2242008DD0080C5F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				503799C62420A6B70080C5F7 /* Helper */,
+				503799C3242009010080C5F7 /* Keypad */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		503799C3242009010080C5F7 /* Keypad */ = {
+			isa = PBXGroup;
+			children = (
+				503799C4242009160080C5F7 /* Keypad.swift */,
+			);
+			path = Keypad;
+			sourceTree = "<group>";
+		};
+		503799C62420A6B70080C5F7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				503799C72420A6D30080C5F7 /* GridStack.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		508CB7D5241FDA7600AE8DED = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +125,7 @@
 		508CB7E0241FDA7600AE8DED /* swap */ = {
 			isa = PBXGroup;
 			children = (
+				503799C1242008CC0080C5F7 /* UI */,
 				508CB7E1241FDA7600AE8DED /* AppDelegate.swift */,
 				508CB7E3241FDA7600AE8DED /* SceneDelegate.swift */,
 				508CB7E5241FDA7600AE8DED /* ContentView.swift */,
@@ -216,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503799C82420A6D30080C5F7 /* GridStack.swift in Sources */,
 				508CB7E2241FDA7600AE8DED /* AppDelegate.swift in Sources */,
+				503799C5242009160080C5F7 /* Keypad.swift in Sources */,
 				508CB7E4241FDA7600AE8DED /* SceneDelegate.swift in Sources */,
 				508CB7E6241FDA7600AE8DED /* ContentView.swift in Sources */,
 			);

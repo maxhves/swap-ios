@@ -9,13 +9,25 @@
 import SwiftUI
 
 struct Keypad: View {
+    let keys: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "-"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            GridStack(rows: 4, columns: 3) { row, col in
+                Button(action: { }) {
+                    Text("\(self.keys[row * 3 + col])")
+                        .foregroundColor(.white)
+                        .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                }
+            }
+        }
     }
 }
 
 struct Keypad_Previews: PreviewProvider {
     static var previews: some View {
         Keypad()
+            .background(Color.backgroundPrimary)
+            .edgesIgnoringSafeArea(.all)
     }
 }
