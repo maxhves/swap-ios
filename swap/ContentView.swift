@@ -29,7 +29,9 @@ struct ContentView: View {
                     .frame(height: geometry.size.height / 3)
                     .background(Color.backgroundAccent)
                     .cornerRadius(32)
-                    .padding()
+                    .padding(.bottom, geometry.safeAreaInsets.bottom)
+                    .padding(.leading)
+                    .padding(.trailing)
                 
             }
             
