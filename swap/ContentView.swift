@@ -12,6 +12,8 @@ import SwiftUI
 extension Color {
     static let backgroundPrimary = Color("backgroundPrimary")
     static let backgroundAccent = Color("backgroundAccent")
+    static let colorAccentPrimary = Color("colorAccentPrimary")
+    static let colorAccentSecondary = Color("colorAccentSecondary")
 }
 
 // MARK: Content View
@@ -23,6 +25,10 @@ struct ContentView: View {
                 
                 // MARK: Currency Display
                 CurrencyDisplay()
+                
+                // MARK: Currency Swap
+                CurrencySwap()
+                    .padding(.bottom)
                 
                 // MARK: Keypad
                 Keypad()
