@@ -13,6 +13,7 @@
 		503799CF2420CAD30080C5F7 /* CurrencyDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799CE2420CAD30080C5F7 /* CurrencyDisplay.swift */; };
 		503799D12420CAE10080C5F7 /* CurrencyDisplayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799D02420CAE10080C5F7 /* CurrencyDisplayDetail.swift */; };
 		503799D42420FD2F0080C5F7 /* CurrencySwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799D32420FD2F0080C5F7 /* CurrencySwap.swift */; };
+		503799D624210E6E0080C5F7 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799D524210E6E0080C5F7 /* HostingController.swift */; };
 		508CB7E2241FDA7600AE8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E1241FDA7600AE8DED /* AppDelegate.swift */; };
 		508CB7E4241FDA7600AE8DED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E3241FDA7600AE8DED /* SceneDelegate.swift */; };
 		508CB7E6241FDA7600AE8DED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E5241FDA7600AE8DED /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 		503799CE2420CAD30080C5F7 /* CurrencyDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDisplay.swift; sourceTree = "<group>"; };
 		503799D02420CAE10080C5F7 /* CurrencyDisplayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDisplayDetail.swift; sourceTree = "<group>"; };
 		503799D32420FD2F0080C5F7 /* CurrencySwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySwap.swift; sourceTree = "<group>"; };
+		503799D524210E6E0080C5F7 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		508CB7DE241FDA7600AE8DED /* swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508CB7E1241FDA7600AE8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		508CB7E3241FDA7600AE8DED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				503799C2242008DD0080C5F7 /* Views */,
+				503799D524210E6E0080C5F7 /* HostingController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				503799D42420FD2F0080C5F7 /* CurrencySwap.swift in Sources */,
 				503799C5242009160080C5F7 /* Keypad.swift in Sources */,
 				508CB7E4241FDA7600AE8DED /* SceneDelegate.swift in Sources */,
+				503799D624210E6E0080C5F7 /* HostingController.swift in Sources */,
 				503799D12420CAE10080C5F7 /* CurrencyDisplayDetail.swift in Sources */,
 				508CB7E6241FDA7600AE8DED /* ContentView.swift in Sources */,
 			);
