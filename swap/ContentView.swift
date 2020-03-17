@@ -11,12 +11,31 @@ import SwiftUI
 // MARK: Color Extension
 extension Color {
     static let backgroundPrimary = Color("backgroundPrimary")
+    static let backgroundAccent = Color("backgroundAccent")
 }
 
 // MARK: Content View
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        GeometryReader { geometry in
+            
+            VStack {
+                
+                EmptyView()
+                
+                Spacer()
+                
+                Keypad()
+                    .frame(height: geometry.size.height / 3)
+                    .background(Color.backgroundAccent)
+                    .cornerRadius(32)
+                    .padding()
+                
+            }
+            
+        }
+        .background(Color.backgroundPrimary)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

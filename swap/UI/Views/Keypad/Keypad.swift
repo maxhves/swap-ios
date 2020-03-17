@@ -17,7 +17,7 @@ struct Keypad: View {
                 Button(action: { }) {
                     Text("\(self.keys[row * 3 + col])")
                         .foregroundColor(.white)
-                        .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        .frame(width: geometry.size.width / 3, height: geometry.size.height / 4 - 8)
                 }
             }
         }
