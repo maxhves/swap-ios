@@ -21,10 +21,10 @@ struct ContentView: View {
             
             VStack {
                 
-                EmptyView()
+                // MARK: Currency Display
+                CurrencyDisplay()
                 
-                Spacer()
-                
+                // MARK: Keypad
                 Keypad()
                     .frame(height: geometry.size.height / 3)
                     .background(Color.backgroundAccent)
