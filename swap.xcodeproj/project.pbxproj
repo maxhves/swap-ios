@@ -24,6 +24,7 @@
 		508CB7E8241FDA7800AE8DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508CB7E7241FDA7800AE8DED /* Assets.xcassets */; };
 		508CB7EB241FDA7800AE8DED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508CB7EA241FDA7800AE8DED /* Preview Assets.xcassets */; };
 		508CB7EE241FDA7800AE8DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508CB7EC241FDA7800AE8DED /* LaunchScreen.storyboard */; };
+		50ACC560242406530078009F /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC55F242406530078009F /* Splash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		508CB7EA241FDA7800AE8DED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		508CB7ED241FDA7800AE8DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		508CB7EF241FDA7800AE8DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50ACC55F242406530078009F /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		503799C1242008CC0080C5F7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				50ACC55E2423FA5D0078009F /* Splash */,
 				503799C2242008DD0080C5F7 /* Views */,
 				503799D524210E6E0080C5F7 /* HostingController.swift */,
 			);
@@ -209,6 +212,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		50ACC55E2423FA5D0078009F /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				50ACC55F242406530078009F /* Splash.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50ACC560242406530078009F /* Splash.swift in Sources */,
 				503799C82420A6D30080C5F7 /* GridStack.swift in Sources */,
 				503799E12423B92A0080C5F7 /* KeypadKey.swift in Sources */,
 				503799D8242111790080C5F7 /* BottomSheetView.swift in Sources */,
