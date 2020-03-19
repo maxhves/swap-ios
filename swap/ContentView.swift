@@ -18,6 +18,10 @@ extension Color {
 
 // MARK: Content View
 struct ContentView: View {
+    
+    // MARK: Observables
+    @ObservedObject var keypadController = KeypadController()
+    
     var body: some View {
         GeometryReader { geometry in
             
@@ -26,12 +30,16 @@ struct ContentView: View {
                 // MARK: Currency Display
                 CurrencyDisplay()
                 
+                Text("\(self.keypadController.selectedKey)")
+                    .foregroundColor(.white)
+                    .font(.title)
+                
                 // MARK: Currency Swap
                 CurrencySwap()
                     .padding(.bottom)
                 
                 // MARK: Keypad
-                Keypad()
+                Keypad(keypadController: self.keypadController)
                     .frame(height: geometry.size.height / 3)
                     .background(Color.backgroundAccent)
                     .cornerRadius(ViewConstants.large)

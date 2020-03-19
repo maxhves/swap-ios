@@ -11,7 +11,7 @@ import SwiftUI
 struct CurrencyDisplay: View {
     var body: some View {
         GeometryReader { geometry in
-            
+
             VStack {
                 
                 // MARK: Primary Display

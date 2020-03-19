@@ -11,22 +11,31 @@ import SwiftUI
 struct Keypad: View {
     let keys: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "-"]
     
+    @ObservedObject var keypadController: KeypadController
+    
     var body: some View {
         GeometryReader { geometry in
             GridStack(rows: 4, columns: 3) { row, col in
-                Button(action: { }) {
+                Button(action: {
+                    self.publishKeyValue(val: row * 3 + col)
+                }) {
                     Text("\(self.keys[row * 3 + col])")
                         .foregroundColor(.white)
-                        .frame(width: geometry.size.width / 3, height: geometry.size.height / 4 - 8)
+                        .frame(width: geometry.size.width / 3, height: geometry.size.height / 4 - ViewConstants.small)
                 }
             }
         }
     }
+    
+    private func publishKeyValue(val value: Int) {
+        keypadController.selectedKey = value
+    }
+    
 }
 
 struct Keypad_Previews: PreviewProvider {
     static var previews: some View {
-        Keypad()
+        Keypad(keypadController: KeypadController())
             .background(Color.backgroundPrimary)
             .edgesIgnoringSafeArea(.all)
     }
