@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Splash: View {
+struct SplashView: View {
     var body: some View {
         
         GeometryReader { geometry in
@@ -28,6 +28,6 @@ struct Splash: View {
 
 struct Splash_Previews: PreviewProvider {
     static var previews: some View {
-        Splash()
+        SplashView()
     }
 }
