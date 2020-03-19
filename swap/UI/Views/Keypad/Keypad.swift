@@ -9,19 +9,110 @@
 import SwiftUI
 
 struct Keypad: View {
-    let keys: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "-"]
-    
     @ObservedObject var keypadController: KeypadController
     
     var body: some View {
         GeometryReader { geometry in
-            GridStack(rows: 4, columns: 3) { row, col in
-                Button(action: {
-                    self.publishKeyValue(val: row * 3 + col)
-                }) {
-                    Text("\(self.keys[row * 3 + col])")
-                        .foregroundColor(.white)
-                        .frame(width: geometry.size.width / 3, height: geometry.size.height / 4 - ViewConstants.small)
+            VStack {
+                VStack {
+                    HStack {
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Seven.rawValue)
+                        }) {
+                            Text("7")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Eight.rawValue)
+                        }) {
+                            Text("8")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Nine.rawValue)
+                        }) {
+                            Text("9")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                    }
+                }
+                VStack {
+                    HStack {
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Four.rawValue)
+                        }) {
+                            Text("4")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Five.rawValue)
+                        }) {
+                            Text("5")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Six.rawValue)
+                        }) {
+                            Text("6")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                    }
+                }
+                VStack {
+                    HStack {
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.One.rawValue)
+                        }) {
+                            Text("1")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Two.rawValue)
+                        }) {
+                            Text("2")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Three.rawValue)
+                        }) {
+                            Text("3")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                    }
+                }
+                VStack {
+                    HStack {
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Decimal.rawValue)
+                        }) {
+                            Text(".")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Zero.rawValue)
+                        }) {
+                            Text("0")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                        Button(action:{
+                            self.publishKeyValue(val: KeypadKey.Backspace.rawValue)
+                        }) {
+                            Text("-")
+                                .foregroundColor(.white)
+                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 4)
+                        }
+                    }
                 }
             }
         }

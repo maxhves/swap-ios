@@ -17,6 +17,7 @@
 		503799D8242111790080C5F7 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799D7242111790080C5F7 /* BottomSheetView.swift */; };
 		503799DA242114DE0080C5F7 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799D9242114DE0080C5F7 /* ViewConstants.swift */; };
 		503799DF242367350080C5F7 /* KeypadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799DE242367350080C5F7 /* KeypadController.swift */; };
+		503799E12423B92A0080C5F7 /* KeypadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503799E02423B92A0080C5F7 /* KeypadKey.swift */; };
 		508CB7E2241FDA7600AE8DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E1241FDA7600AE8DED /* AppDelegate.swift */; };
 		508CB7E4241FDA7600AE8DED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E3241FDA7600AE8DED /* SceneDelegate.swift */; };
 		508CB7E6241FDA7600AE8DED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CB7E5241FDA7600AE8DED /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		503799D7242111790080C5F7 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		503799D9242114DE0080C5F7 /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		503799DE242367350080C5F7 /* KeypadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadController.swift; sourceTree = "<group>"; };
+		503799E02423B92A0080C5F7 /* KeypadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadKey.swift; sourceTree = "<group>"; };
 		508CB7DE241FDA7600AE8DED /* swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508CB7E1241FDA7600AE8DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		508CB7E3241FDA7600AE8DED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				503799DE242367350080C5F7 /* KeypadController.swift */,
+				503799E02423B92A0080C5F7 /* KeypadKey.swift */,
 			);
 			path = Keypad;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503799C82420A6D30080C5F7 /* GridStack.swift in Sources */,
+				503799E12423B92A0080C5F7 /* KeypadKey.swift in Sources */,
 				503799D8242111790080C5F7 /* BottomSheetView.swift in Sources */,
 				503799CF2420CAD30080C5F7 /* CurrencyDisplay.swift in Sources */,
 				508CB7E2241FDA7600AE8DED /* AppDelegate.swift in Sources */,

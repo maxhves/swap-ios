@@ -30,6 +30,7 @@ struct ContentView: View {
                 // MARK: Currency Display
                 CurrencyDisplay()
                 
+                // TODO: Remove
                 Text("\(self.keypadController.selectedKey)")
                     .foregroundColor(.white)
                     .font(.title)
