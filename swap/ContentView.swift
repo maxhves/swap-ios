@@ -19,11 +19,23 @@ extension Color {
 // MARK: Content View
 struct ContentView: View {
     
+    @State var showSplashView: Bool = true
+    
     var body: some View {
         
         ZStack {
             
-            EmptyView()
+            HomeView()
+            
+            SplashView()
+                .opacity(showSplashView ? 1 : 0)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        withAnimation() {
+                            self.showSplashView = false
+                        }
+                    }
+                }
             
         }
         
