@@ -11,6 +11,6 @@ import Foundation
 
 enum Environment: String {
     
-    case exchange = "www.exchangeapi"
+    case exchange = "https://api.exchangeratesapi.io"
     
 }
