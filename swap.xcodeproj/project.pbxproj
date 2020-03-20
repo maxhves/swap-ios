@@ -32,6 +32,7 @@
 		50CAC8752425009100F3AEE3 /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC8742425009100F3AEE3 /* NetworkRoute.swift */; };
 		50CAC8772425012000F3AEE3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC8762425012000F3AEE3 /* Environment.swift */; };
 		50CAC87B24254E1100F3AEE3 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC87A24254E1100F3AEE3 /* Resource.swift */; };
+		50CAC87D2425515200F3AEE3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC87C2425515200F3AEE3 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		50CAC8742425009100F3AEE3 /* NetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
 		50CAC8762425012000F3AEE3 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		50CAC87A24254E1100F3AEE3 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		50CAC87C2425515200F3AEE3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 				50CAC8742425009100F3AEE3 /* NetworkRoute.swift */,
 				50CAC8762425012000F3AEE3 /* Environment.swift */,
 				50CAC87A24254E1100F3AEE3 /* Resource.swift */,
+				50CAC87C2425515200F3AEE3 /* Network.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				503799DF242367350080C5F7 /* KeypadController.swift in Sources */,
 				503799DA242114DE0080C5F7 /* ViewConstants.swift in Sources */,
 				503799C5242009160080C5F7 /* Keypad.swift in Sources */,
+				50CAC87D2425515200F3AEE3 /* Network.swift in Sources */,
 				508CB7E4241FDA7600AE8DED /* SceneDelegate.swift in Sources */,
 				50CAC86F2424E41E00F3AEE3 /* CurrencyRow.swift in Sources */,
 				503799D624210E6E0080C5F7 /* HostingController.swift in Sources */,
