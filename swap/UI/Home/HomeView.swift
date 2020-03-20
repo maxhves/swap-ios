@@ -20,7 +20,7 @@ struct HomeView: View {
         GeometryReader { geometry in
             
             ZStack {
-                VStack {
+                VStack(spacing: 0) {
                     
                     // MARK: Currency Display
                     CurrencyDisplay()
@@ -39,7 +39,6 @@ struct HomeView: View {
                     }
                     .background(Color.black)
                     .cornerRadius(ViewConstants.regular)
-                    .padding()
                     .sheet(isPresented: self.$showCurrencySelection) {
                         CurrencySelectionView()
                     }

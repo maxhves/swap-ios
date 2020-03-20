@@ -20,11 +20,14 @@ struct CurrencySelectionView: View {
             
             VStack(spacing: 0) {
             
-                ZStack {
+                VStack(spacing: 0) {
                     
                     Text("Currency Selection")
                         .frame(width: geometry.size.width)
                         .background(Color.red)
+                    
+                    Divider()
+                        .background(Color.white)
                     
                 }
                 
