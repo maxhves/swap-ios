@@ -25,8 +25,10 @@ struct ContentView: View {
         
         ZStack {
             
+            // MARK: Home View
             HomeView()
             
+            // MARK: Splash View
             SplashView()
                 .opacity(showSplashView ? 1 : 0)
                 .onAppear {
