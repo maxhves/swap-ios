@@ -50,9 +50,7 @@ struct BottomSheetView<Content: View>: View {
             .animation(.interactiveSpring())
             .gesture(
                 DragGesture().updating(self.$translation) { value, state, _ in
-                    if self.isOpen {
-                        state = value.translation.height
-                    }
+                    state = value.translation.height
                 }.onEnded { value in
                     let snapDistance = self.maxHeight * 0.5
                     guard abs(value.translation.height) > snapDistance else {
@@ -72,6 +70,7 @@ struct BottomSheetView_Previews: PreviewProvider {
     static var previews: some View {
         BottomSheetView(isOpen: .constant(true), maxHeight: 350) {
             Text("Bottom Sheet View")
+                .foregroundColor(.white)
         }
         .edgesIgnoringSafeArea(.all)
     }
