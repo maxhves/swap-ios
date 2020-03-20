@@ -28,6 +28,9 @@
 		50ACC56324240A660078009F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC56224240A660078009F /* HomeView.swift */; };
 		50CAC86D2424E3A700F3AEE3 /* CurrencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC86C2424E3A700F3AEE3 /* CurrencySelectionView.swift */; };
 		50CAC86F2424E41E00F3AEE3 /* CurrencyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC86E2424E41E00F3AEE3 /* CurrencyRow.swift */; };
+		50CAC8722425001B00F3AEE3 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC8712425001B00F3AEE3 /* Method.swift */; };
+		50CAC8752425009100F3AEE3 /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC8742425009100F3AEE3 /* NetworkRoute.swift */; };
+		50CAC8772425012000F3AEE3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC8762425012000F3AEE3 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		50ACC56224240A660078009F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50CAC86C2424E3A700F3AEE3 /* CurrencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionView.swift; sourceTree = "<group>"; };
 		50CAC86E2424E41E00F3AEE3 /* CurrencyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRow.swift; sourceTree = "<group>"; };
+		50CAC8712425001B00F3AEE3 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		50CAC8742425009100F3AEE3 /* NetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
+		50CAC8762425012000F3AEE3 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 		503799DB242367060080C5F7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				50CAC8702424FFEE00F3AEE3 /* Remote */,
 				503799DC2423670A0080C5F7 /* Models */,
 			);
 			path = Data;
@@ -243,6 +250,24 @@
 				50CAC86E2424E41E00F3AEE3 /* CurrencyRow.swift */,
 			);
 			path = "Currency Selection";
+			sourceTree = "<group>";
+		};
+		50CAC8702424FFEE00F3AEE3 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				50CAC8732425007F00F3AEE3 /* Base */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		50CAC8732425007F00F3AEE3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				50CAC8712425001B00F3AEE3 /* Method.swift */,
+				50CAC8742425009100F3AEE3 /* NetworkRoute.swift */,
+				50CAC8762425012000F3AEE3 /* Environment.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +387,9 @@
 				503799D8242111790080C5F7 /* BottomSheetView.swift in Sources */,
 				503799CF2420CAD30080C5F7 /* CurrencyDisplay.swift in Sources */,
 				508CB7E2241FDA7600AE8DED /* AppDelegate.swift in Sources */,
+				50CAC8752425009100F3AEE3 /* NetworkRoute.swift in Sources */,
+				50CAC8772425012000F3AEE3 /* Environment.swift in Sources */,
+				50CAC8722425001B00F3AEE3 /* Method.swift in Sources */,
 				503799D42420FD2F0080C5F7 /* CurrencySwap.swift in Sources */,
 				503799DF242367350080C5F7 /* KeypadController.swift in Sources */,
 				503799DA242114DE0080C5F7 /* ViewConstants.swift in Sources */,
