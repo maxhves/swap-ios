@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeView: View {
 
     // MARK: States
-    @State var showCurrencySelection: Bool = false
+    @State var showCurrencySelection: Bool = true
     
     // MARK: Observables
     @ObservedObject var keypadController = KeypadController()
