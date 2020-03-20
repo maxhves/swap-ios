@@ -15,22 +15,25 @@ struct CurrencyRow: View {
             
             Image(systemName: "flag.circle")
                 .resizable()
+                .foregroundColor(.white)
                 .frame(width: 24, height: 24)
-                .padding(.leading)
                 .padding(.trailing)
             
             VStack(alignment: .leading) {
                 
                 Text("NOK")
                     .font(.headline)
+                    .foregroundColor(.white)
                 Text("Norwegian Kroners")
                     .font(.caption)
+                    .foregroundColor(.white)
                 
             }
             
             Spacer()
             
         }
+        .listRowBackground(Color.black)
         
     }
 }
@@ -38,6 +41,7 @@ struct CurrencyRow: View {
 struct CurrencyRow_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyRow()
-            .previewLayout(.fixed(width: 350, height: 44))
+            .previewLayout(.fixed(width: 300, height: 44))
+            .background(Color.black)
     }
 }

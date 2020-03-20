@@ -30,7 +30,7 @@ struct BottomSheetView<Content: View>: View {
     
     private var indicator: some View {
         RoundedRectangle(cornerRadius: ViewConstants.large)
-            .fill(Color.black)
+            .fill(Color.white)
             .frame(width: ViewConstants.indicatorWidth, height: ViewConstants.indicatorHeight)
     }
     
@@ -43,7 +43,7 @@ struct BottomSheetView<Content: View>: View {
                 self.content
             }
             .frame(width: geometry.size.width, height: self.maxHeight, alignment: .top)
-            .background(Color.blue)
+            .background(Color.black)
             .cornerRadius(ViewConstants.regular)
             .frame(height: geometry.size.height, alignment: .bottom)
             .offset(y: max(self.offset + self.translation, 0))
