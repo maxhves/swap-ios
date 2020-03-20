@@ -40,6 +40,9 @@ struct HomeView: View {
                     .background(Color.black)
                     .cornerRadius(ViewConstants.regular)
                     .padding()
+                    .sheet(isPresented: self.$showCurrencySelection) {
+                        CurrencySelectionView()
+                    }
                     
                     // MARK: Currency Swap
                     CurrencySwap()
@@ -54,11 +57,6 @@ struct HomeView: View {
                         .padding(.leading)
                         .padding(.trailing)
                     
-                }
-                
-                // MARK: Currency Selection Bottom Sheet
-                BottomSheetView(isOpen: self.$showCurrencySelection, maxHeight: geometry.size.height * 0.6) {
-                    CurrencySelectionView()
                 }
                 
             }
