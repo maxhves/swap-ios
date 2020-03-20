@@ -43,7 +43,7 @@ struct BottomSheetView<Content: View>: View {
             }
             .frame(width: geometry.size.width, height: self.maxHeight, alignment: .top)
             .background(Color.blue)
-            .cornerRadius(ViewConstants.large)
+            .cornerRadius(ViewConstants.regular)
             .frame(height: geometry.size.height, alignment: .bottom)
             .offset(y: self.offset)
             
