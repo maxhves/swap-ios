@@ -16,21 +16,27 @@ struct CurrencySelectionView: View {
     
     var body: some View {
         
-        VStack {
-        
-            List {
+        GeometryReader { geometry in
+            
+            VStack(spacing: 0) {
+            
+                ZStack {
+                    
+                    Text("Currency Selection")
+                        .frame(width: geometry.size.width)
+                        .background(Color.red)
+                    
+                }
                 
-                CurrencyRow()
-                CurrencyRow()
-                CurrencyRow()
-                CurrencyRow()
-                CurrencyRow()
-                CurrencyRow()
-                CurrencyRow()
-                CurrencyRow()
+                List {
+                    
+                    ForEach(1...33, id: \.self) { n in
+                        CurrencyRow()
+                    }
+                    
+                }
                 
-                
-            }
+            }.background(Color.blue.edgesIgnoringSafeArea(.all))
             
         }
         
