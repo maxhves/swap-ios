@@ -30,6 +30,17 @@ struct HomeView: View {
                         .foregroundColor(.white)
                         .font(.title)
                     
+                    // TODO: Remove
+                    Button(action: {
+                        self.showCurrencySelection = true
+                    }) {
+                        Text("Open Sheet")
+                            .padding()
+                    }
+                    .background(Color.black)
+                    .cornerRadius(ViewConstants.regular)
+                    .padding()
+                    
                     // MARK: Currency Swap
                     CurrencySwap()
                         .padding(.bottom)
@@ -45,8 +56,9 @@ struct HomeView: View {
                     
                 }
                 
-                BottomSheetView(isOpen: self.$showCurrencySelection, maxHeight: geometry.size.height / 2) {
-                    Text("Okay")
+                // MARK: Currency Selection Bottom Sheet
+                BottomSheetView(isOpen: self.$showCurrencySelection, maxHeight: geometry.size.height * 0.6) {
+                    CurrencySelectionView()
                 }
                 
             }

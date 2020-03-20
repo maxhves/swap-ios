@@ -26,6 +26,8 @@
 		508CB7EE241FDA7800AE8DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508CB7EC241FDA7800AE8DED /* LaunchScreen.storyboard */; };
 		50ACC560242406530078009F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC55F242406530078009F /* SplashView.swift */; };
 		50ACC56324240A660078009F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACC56224240A660078009F /* HomeView.swift */; };
+		50CAC86D2424E3A700F3AEE3 /* CurrencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC86C2424E3A700F3AEE3 /* CurrencySelectionView.swift */; };
+		50CAC86F2424E41E00F3AEE3 /* CurrencyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC86E2424E41E00F3AEE3 /* CurrencyRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		508CB7EF241FDA7800AE8DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50ACC55F242406530078009F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		50ACC56224240A660078009F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		50CAC86C2424E3A700F3AEE3 /* CurrencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionView.swift; sourceTree = "<group>"; };
+		50CAC86E2424E41E00F3AEE3 /* CurrencyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		503799C2242008DD0080C5F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				50CAC86B2424E33A00F3AEE3 /* Currency Selection */,
 				503799D22420FC500080C5F7 /* Currency Swap */,
 				503799CD2420CABB0080C5F7 /* Currency Display */,
 				503799C62420A6B70080C5F7 /* Helper */,
@@ -231,6 +236,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		50CAC86B2424E33A00F3AEE3 /* Currency Selection */ = {
+			isa = PBXGroup;
+			children = (
+				50CAC86C2424E3A700F3AEE3 /* CurrencySelectionView.swift */,
+				50CAC86E2424E41E00F3AEE3 /* CurrencyRow.swift */,
+			);
+			path = "Currency Selection";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,6 +356,7 @@
 			files = (
 				50ACC560242406530078009F /* SplashView.swift in Sources */,
 				503799C82420A6D30080C5F7 /* GridStack.swift in Sources */,
+				50CAC86D2424E3A700F3AEE3 /* CurrencySelectionView.swift in Sources */,
 				503799E12423B92A0080C5F7 /* KeypadKey.swift in Sources */,
 				50ACC56324240A660078009F /* HomeView.swift in Sources */,
 				503799D8242111790080C5F7 /* BottomSheetView.swift in Sources */,
@@ -352,6 +367,7 @@
 				503799DA242114DE0080C5F7 /* ViewConstants.swift in Sources */,
 				503799C5242009160080C5F7 /* Keypad.swift in Sources */,
 				508CB7E4241FDA7600AE8DED /* SceneDelegate.swift in Sources */,
+				50CAC86F2424E41E00F3AEE3 /* CurrencyRow.swift in Sources */,
 				503799D624210E6E0080C5F7 /* HostingController.swift in Sources */,
 				503799D12420CAE10080C5F7 /* CurrencyDisplayDetail.swift in Sources */,
 				508CB7E6241FDA7600AE8DED /* ContentView.swift in Sources */,
