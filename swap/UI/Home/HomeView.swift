@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct HomeView: View {
+
+    // MARK: States
+    @State var showCurrencySelection: Bool = false
     
     // MARK: Observables
     @ObservedObject var keypadController = KeypadController()
@@ -16,28 +19,35 @@ struct HomeView: View {
     var body: some View {
         GeometryReader { geometry in
             
-            VStack {
+            ZStack {
+                VStack {
+                    
+                    // MARK: Currency Display
+                    CurrencyDisplay()
+                    
+                    // TODO: Remove
+                    Text("\(self.keypadController.selectedKey)")
+                        .foregroundColor(.white)
+                        .font(.title)
+                    
+                    // MARK: Currency Swap
+                    CurrencySwap()
+                        .padding(.bottom)
+                    
+                    // MARK: Keypad
+                    Keypad(keypadController: self.keypadController)
+                        .frame(height: geometry.size.height / 3)
+                        .background(Color.backgroundAccent)
+                        .cornerRadius(ViewConstants.large)
+                        .padding(.bottom, geometry.safeAreaInsets.bottom)
+                        .padding(.leading)
+                        .padding(.trailing)
+                    
+                }
                 
-                // MARK: Currency Display
-                CurrencyDisplay()
-                
-                // TODO: Remove
-                Text("\(self.keypadController.selectedKey)")
-                    .foregroundColor(.white)
-                    .font(.title)
-                
-                // MARK: Currency Swap
-                CurrencySwap()
-                    .padding(.bottom)
-                
-                // MARK: Keypad
-                Keypad(keypadController: self.keypadController)
-                    .frame(height: geometry.size.height / 3)
-                    .background(Color.backgroundAccent)
-                    .cornerRadius(ViewConstants.large)
-                    .padding(.bottom, geometry.safeAreaInsets.bottom)
-                    .padding(.leading)
-                    .padding(.trailing)
+                BottomSheetView(isOpen: self.$showCurrencySelection, maxHeight: geometry.size.height / 2) {
+                    Text("Okay")
+                }
                 
             }
             

@@ -11,6 +11,7 @@ import SwiftUI
 struct BottomSheetView<Content: View>: View {
     
     @Binding var isOpen: Bool
+    @GestureState private var translation: CGFloat = 0
     
     let maxHeight: CGFloat
     let minHeight: CGFloat
@@ -45,7 +46,19 @@ struct BottomSheetView<Content: View>: View {
             .background(Color.blue)
             .cornerRadius(ViewConstants.regular)
             .frame(height: geometry.size.height, alignment: .bottom)
-            .offset(y: self.offset)
+            .offset(y: max(self.offset + self.translation, 0))
+            .animation(.interactiveSpring())
+            .gesture(
+                DragGesture().updating(self.$translation) { value, state, _ in
+                    state = value.translation.height
+                }.onEnded { value in
+                    let snapDistance = self.maxHeight * 0.5
+                    guard abs(value.translation.height) > snapDistance else {
+                        return
+                    }
+                    self.isOpen = value.translation.height < 0
+                }
+            )
             
         }
         
@@ -55,7 +68,7 @@ struct BottomSheetView<Content: View>: View {
 
 struct BottomSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheetView(isOpen: .constant(true), maxHeight: 250) {
+        BottomSheetView(isOpen: .constant(true), maxHeight: 350) {
             Text("Bottom Sheet View")
         }
         .edgesIgnoringSafeArea(.all)

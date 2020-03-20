@@ -19,6 +19,6 @@ struct ViewConstants {
     // MARK: Bottom Sheet
     static let indicatorHeight: CGFloat = 6
     static let indicatorWidth: CGFloat = 60
-    static let sheetMinHeightFactor: CGFloat = 0.5
+    static let sheetMinHeightFactor: CGFloat = 0.2
     
 }
