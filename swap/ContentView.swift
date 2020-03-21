@@ -27,12 +27,13 @@ struct ContentView: View {
             
             // MARK: Home View
             HomeView()
+                .environmentObject(HomeViewModel.init(with: ExchangeRatesNetwork()))
             
             // MARK: Splash View
             SplashView()
                 .opacity(showSplashView ? 1 : 0)
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation() {
                             self.showSplashView = false
                         }

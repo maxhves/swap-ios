@@ -11,7 +11,7 @@ import Combine
 
 class HomeViewModel: NetworkViewModel, ObservableObject {
     
-    typealias NetworkResource = String
+    typealias NetworkResource = Rate
     
     var resource: Resource<NetworkResource> = .loading
     var network: Network
@@ -21,7 +21,5 @@ class HomeViewModel: NetworkViewModel, ObservableObject {
     init(with network: Network) {
         self.network = network
     }
-    
-    func onAppear() {}
     
 }

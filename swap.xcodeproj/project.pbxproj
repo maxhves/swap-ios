@@ -37,6 +37,7 @@
 		50CAC882242673ED00F3AEE3 /* ExchageRatesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC881242673ED00F3AEE3 /* ExchageRatesRoute.swift */; };
 		50CAC884242674C700F3AEE3 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC883242674C700F3AEE3 /* NetworkViewModel.swift */; };
 		50CAC886242679D100F3AEE3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC885242679D100F3AEE3 /* HomeViewModel.swift */; };
+		50CAC889242685C900F3AEE3 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC888242685C900F3AEE3 /* Rate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		50CAC881242673ED00F3AEE3 /* ExchageRatesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchageRatesRoute.swift; sourceTree = "<group>"; };
 		50CAC883242674C700F3AEE3 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
 		50CAC885242679D100F3AEE3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		50CAC888242685C900F3AEE3 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		503799DC2423670A0080C5F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				50CAC887242685BB00F3AEE3 /* Exchange */,
 				503799DD2423671C0080C5F7 /* Keypad */,
 			);
 			path = Models;
@@ -294,6 +297,14 @@
 				50CAC881242673ED00F3AEE3 /* ExchageRatesRoute.swift */,
 			);
 			path = "Exchange Rates";
+			sourceTree = "<group>";
+		};
+		50CAC887242685BB00F3AEE3 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				50CAC888242685C900F3AEE3 /* Rate.swift */,
+			);
+			path = Exchange;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +440,7 @@
 				50CAC886242679D100F3AEE3 /* HomeViewModel.swift in Sources */,
 				50CAC86F2424E41E00F3AEE3 /* CurrencyRow.swift in Sources */,
 				503799D624210E6E0080C5F7 /* HostingController.swift in Sources */,
+				50CAC889242685C900F3AEE3 /* Rate.swift in Sources */,
 				503799D12420CAE10080C5F7 /* CurrencyDisplayDetail.swift in Sources */,
 				508CB7E6241FDA7600AE8DED /* ContentView.swift in Sources */,
 			);

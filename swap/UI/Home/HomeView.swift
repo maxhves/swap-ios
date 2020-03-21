@@ -16,6 +16,9 @@ struct HomeView: View {
     // MARK: Observables
     @ObservedObject var keypadController = KeypadController()
     
+    // MARK: Environment Objects
+    @EnvironmentObject var homeViewModel: HomeViewModel
+    
     var body: some View {
         GeometryReader { geometry in
             
@@ -23,40 +26,55 @@ struct HomeView: View {
                 VStack(spacing: 0) {
                     
                     // MARK: Currency Display
-                    CurrencyDisplay()
+//                    CurrencyDisplay()
                     
                     // TODO: Remove
-                    Text("\(self.keypadController.selectedKey)")
-                        .foregroundColor(.white)
-                        .font(.title)
+//                    Text("\(self.keypadController.selectedKey)")
+//                        .foregroundColor(.white)
+//                        .font(.title)
                     
                     // TODO: Remove
-                    Button(action: {
-                        self.showCurrencySelection = true
-                    }) {
-                        Text("Open Sheet")
-                            .padding()
+                    self.homeViewModel.resource.hasResource { exchange in
+//                        Button(action: {
+//                            self.showCurrencySelection = true
+//                        }) {
+//                            Text("Open Sheet")
+//                                .padding()
+//                        }
+//                        .background(Color.black)
+//                        .cornerRadius(ViewConstants.regular)
+//                        .sheet(isPresented: self.$showCurrencySelection) {
+//                            CurrencySelectionView()
+//                        }
+                        Text("Please show up")
+                            .foregroundColor(.white)
                     }
-                    .background(Color.black)
-                    .cornerRadius(ViewConstants.regular)
-                    .sheet(isPresented: self.$showCurrencySelection) {
-                        CurrencySelectionView()
-                    }
+                    
+//                    self.homeViewModel.resource.hasError() { error in
+//                        Text("Error innit")
+//                            .foregroundColor(.white)
+//                    }
+//
+//                    self.homeViewModel.resource.isLoading() {
+//                        Text("Loading innit")
+//                            .foregroundColor(.white)
+//                    }
                     
                     // MARK: Currency Swap
-                    CurrencySwap()
-                        .padding(.bottom)
+//                    CurrencySwap()
+//                        .padding(.bottom)
                     
                     // MARK: Keypad
-                    Keypad(keypadController: self.keypadController)
-                        .frame(height: geometry.size.height / 3)
-                        .background(Color.backgroundAccent)
-                        .cornerRadius(ViewConstants.large)
-                        .padding(.bottom, geometry.safeAreaInsets.bottom)
-                        .padding(.leading)
-                        .padding(.trailing)
+//                    Keypad(keypadController: self.keypadController)
+//                        .frame(height: geometry.size.height / 3)
+//                        .background(Color.backgroundAccent)
+//                        .cornerRadius(ViewConstants.large)
+//                        .padding(.bottom, geometry.safeAreaInsets.bottom)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                     
                 }
+                .onAppear(perform: self.homeViewModel.onAppear)
                 
             }
             
@@ -70,5 +88,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(HomeViewModel.init(with: ExchangeRatesNetwork()))
     }
 }

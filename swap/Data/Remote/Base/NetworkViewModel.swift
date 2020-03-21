@@ -43,7 +43,7 @@ extension NetworkViewModel {
             .store(in: &bag)
     }
     
-    func onApper() {
+    func onAppear() {
         fetch(route: route)
     }
     
