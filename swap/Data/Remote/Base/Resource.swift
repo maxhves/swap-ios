@@ -1,5 +1,5 @@
 //
-//  Resource.swift
+//  NetworkResource.swift
 //  swap
 //
 //  Created by Maximilian Hvesser-Lewis on 20/03/2020.

@@ -35,6 +35,7 @@
 		50CAC87D2425515200F3AEE3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC87C2425515200F3AEE3 /* Network.swift */; };
 		50CAC8802426736F00F3AEE3 /* ExchangeRatesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC87F2426736F00F3AEE3 /* ExchangeRatesNetwork.swift */; };
 		50CAC882242673ED00F3AEE3 /* ExchageRatesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC881242673ED00F3AEE3 /* ExchageRatesRoute.swift */; };
+		50CAC884242674C700F3AEE3 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CAC883242674C700F3AEE3 /* NetworkViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		50CAC87C2425515200F3AEE3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		50CAC87F2426736F00F3AEE3 /* ExchangeRatesNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesNetwork.swift; sourceTree = "<group>"; };
 		50CAC881242673ED00F3AEE3 /* ExchageRatesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchageRatesRoute.swift; sourceTree = "<group>"; };
+		50CAC883242674C700F3AEE3 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 				50CAC8762425012000F3AEE3 /* Environment.swift */,
 				50CAC87A24254E1100F3AEE3 /* Resource.swift */,
 				50CAC87C2425515200F3AEE3 /* Network.swift */,
+				50CAC883242674C700F3AEE3 /* NetworkViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				50CAC882242673ED00F3AEE3 /* ExchageRatesRoute.swift in Sources */,
 				50ACC56324240A660078009F /* HomeView.swift in Sources */,
 				503799D8242111790080C5F7 /* BottomSheetView.swift in Sources */,
+				50CAC884242674C700F3AEE3 /* NetworkViewModel.swift in Sources */,
 				50CAC87B24254E1100F3AEE3 /* Resource.swift in Sources */,
 				503799CF2420CAD30080C5F7 /* CurrencyDisplay.swift in Sources */,
 				508CB7E2241FDA7600AE8DED /* AppDelegate.swift in Sources */,
