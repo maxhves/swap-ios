@@ -8,9 +8,21 @@
 
 import SwiftUI
 
+extension Color {
+
+    static let background = Color("background")
+    
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        
+        ZStack {
+            
+            HomeView()
+            
+        }
+        
     }
 }
 
