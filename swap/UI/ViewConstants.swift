@@ -20,5 +20,6 @@ struct ViewConstants {
     static let keypadPadding: CGFloat = 24
     static let keypadRows: Int = 4
     static let keypadColumns: Int = 3
+    static let keypadHeightRatio: CGFloat = 2.5
     
 }

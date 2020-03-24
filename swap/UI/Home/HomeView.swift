@@ -21,13 +21,13 @@ struct HomeView: View {
                 }
                 Keypad()
                     .background(Color.white)
-                    .cornerRadius(32)
+                    .cornerRadius(ViewConstants.large)
                     .padding(.leading)
                     .padding(.trailing)
                     .padding(.bottom, geometry.safeAreaInsets.bottom)
                     .frame(
                         width: geometry.size.width,
-                        height: geometry.size.height / 2.5
+                        height: geometry.size.height / ViewConstants.keypadHeightRatio
                     )
             }
             .background(Color.background)
