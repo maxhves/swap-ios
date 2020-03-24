@@ -11,17 +11,28 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         
-        VStack {
-            Spacer()
-            HStack {
+        GeometryReader { geometry in
+            VStack {
                 Spacer()
-                Text("Placeholder")
-                Spacer()
+                HStack {
+                    Spacer()
+                    Text("Placeholder")
+                    Spacer()
+                }
+                Keypad()
+                    .background(Color.white)
+                    .cornerRadius(32)
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.bottom, geometry.safeAreaInsets.bottom)
+                    .frame(
+                        width: geometry.size.width,
+                        height: geometry.size.height / 2.5
+                    )
             }
-            Keypad()
+            .background(Color.background)
+            .edgesIgnoringSafeArea(.all)
         }
-        .background(Color.background)
-        .edgesIgnoringSafeArea(.all)
         
     }
 }

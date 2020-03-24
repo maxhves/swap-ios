@@ -16,6 +16,7 @@
 		50CEF2052429042100DDCAC3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF2042429042100DDCAC3 /* HomeView.swift */; };
 		50CEF209242907F300DDCAC3 /* Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF208242907F300DDCAC3 /* Keypad.swift */; };
 		50CEF20B24290A9500DDCAC3 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF20A24290A9500DDCAC3 /* GridStack.swift */; };
+		50ED83F4242A2BA800878CB6 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ED83F3242A2BA800878CB6 /* ViewConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		50CEF2042429042100DDCAC3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50CEF208242907F300DDCAC3 /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
 		50CEF20A24290A9500DDCAC3 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		50ED83F3242A2BA800878CB6 /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				50CEF206242907E300DDCAC3 /* Views */,
 				50CEF2032429040D00DDCAC3 /* Home */,
+				50ED83F3242A2BA800878CB6 /* ViewConstants.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				50CEF1EF2429002C00DDCAC3 /* AppDelegate.swift in Sources */,
 				50CEF2052429042100DDCAC3 /* HomeView.swift in Sources */,
+				50ED83F4242A2BA800878CB6 /* ViewConstants.swift in Sources */,
 				50CEF20B24290A9500DDCAC3 /* GridStack.swift in Sources */,
 				50CEF1F12429002C00DDCAC3 /* SceneDelegate.swift in Sources */,
 				50CEF209242907F300DDCAC3 /* Keypad.swift in Sources */,

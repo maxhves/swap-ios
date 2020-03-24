@@ -15,14 +15,14 @@ struct Keypad: View {
     var body: some View {
         
         GeometryReader { geometry in
-            GridStack(rows: 4, columns: 3) { row, column in
+            GridStack(rows: ViewConstants.keypadRows, columns: ViewConstants.keypadColumns) { row, column in
                 Button(action: {}) {
-                    Text("\(self.keys[row * 3 + column])")
+                    Text("\(self.keys[row * ViewConstants.keypadColumns + column])")
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(Color.gray)
                         .frame(
                             width: geometry.size.width / 3,
-                            height: geometry.size.height / 4
+                            height: (geometry.size.height - ViewConstants.keypadPadding) / 4
                         )
                 }
             }
