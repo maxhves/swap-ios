@@ -12,11 +12,16 @@ struct Keypad: View {
     
     let keys: [String] = ["7", "8", "9", "4", "5", "6", "1", "2", "3", ".", "0", "-"]
     
+    @State var keyPressed: Int = 0
+    
     var body: some View {
         
         GeometryReader { geometry in
             GridStack(rows: ViewConstants.keypadRows, columns: ViewConstants.keypadColumns) { row, column in
-                Button(action: {}) {
+                Button(action: {
+                    let index = row * ViewConstants.keypadColumns + column
+                    self.handleKeyPressed(index)
+                }) {
                     Text("\(self.keys[row * ViewConstants.keypadColumns + column])")
                         .font(.system(
                             size: ViewConstants.keyFontSize,
@@ -33,6 +38,16 @@ struct Keypad: View {
         }
         
     }
+    
+    /**
+     Handle when a keypad key is selected by changing the key state
+     - Parameters:
+        - keyIndex: the index of the pressed key
+     */
+    private func handleKeyPressed(_ keyIndex: Int) {
+        keyPressed = keyIndex
+    }
+    
 }
 
 struct Keypad_Previews: PreviewProvider {
