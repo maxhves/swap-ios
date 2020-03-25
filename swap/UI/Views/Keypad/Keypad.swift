@@ -18,8 +18,12 @@ struct Keypad: View {
             GridStack(rows: ViewConstants.keypadRows, columns: ViewConstants.keypadColumns) { row, column in
                 Button(action: {}) {
                     Text("\(self.keys[row * ViewConstants.keypadColumns + column])")
-                        .font(.system(.body, design: .rounded))
-                        .foregroundColor(Color.gray)
+                        .font(.system(
+                            size: ViewConstants.keyFontSize,
+                            weight: .semibold,
+                            design: .rounded)
+                        )
+                        .foregroundColor(Color.textBody)
                         .frame(
                             width: geometry.size.width / 3,
                             height: (geometry.size.height - ViewConstants.keypadPadding) / 4

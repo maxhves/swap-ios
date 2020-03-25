@@ -12,6 +12,8 @@ extension Color {
 
     static let background = Color("background")
     
+    static let textBody = Color("textBody")
+    
 }
 
 struct ContentView: View {
