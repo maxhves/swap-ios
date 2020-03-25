@@ -12,7 +12,7 @@ struct Keypad: View {
     
     let keys: [String] = ["7", "8", "9", "4", "5", "6", "1", "2", "3", ".", "0", "-"]
     
-    @State var keyPressed: Int = 0
+    @Binding var keyPressed: Int
     
     var body: some View {
         
@@ -52,6 +52,6 @@ struct Keypad: View {
 
 struct Keypad_Previews: PreviewProvider {
     static var previews: some View {
-        Keypad()
+        Keypad(keyPressed: .constant(0))
     }
 }

@@ -9,17 +9,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var key: Int = 0
+    
     var body: some View {
         
         GeometryReader { geometry in
             VStack {
+                Spacer()
+                Text("\(self.key)")
                 Spacer()
                 HStack {
                     Spacer()
                     Text("Placeholder")
                     Spacer()
                 }
-                Keypad()
+                Keypad(keyPressed: self.$key)
                     .background(Color.white)
                     .cornerRadius(ViewConstants.large)
                     .padding(.leading)
