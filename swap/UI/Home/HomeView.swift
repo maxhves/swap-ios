@@ -11,6 +11,8 @@ import SwiftUI
 struct HomeView: View {
     @State var key: Int = 0
     
+    @EnvironmentObject var model: HomeViewModel
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -20,7 +22,10 @@ struct HomeView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text("Placeholder")
+                    self.model.resource.hasResource { rate in
+                        Text("Base: \(rate.base) Date: \(rate.date)")
+                            .padding()
+                    }
                     Spacer()
                 }
                 Keypad(keyPressed: self.$key)
@@ -36,6 +41,7 @@ struct HomeView: View {
             }
             .background(Color.background)
             .edgesIgnoringSafeArea(.all)
+            .onAppear(perform: self.model.onAppear)
         }
         
     }
@@ -44,5 +50,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(HomeViewModel(with: ExchangeRatesNetwork()))
     }
 }

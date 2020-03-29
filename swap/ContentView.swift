@@ -22,6 +22,7 @@ struct ContentView: View {
         ZStack {
             
             HomeView()
+                .environmentObject(HomeViewModel.init(with: ExchangeRatesNetwork()))
             
         }
         
