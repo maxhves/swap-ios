@@ -17,9 +17,7 @@ struct HomeView: View {
         
         GeometryReader { geometry in
             VStack {
-                Spacer()
-                Text("\(self.key)")
-                Spacer()
+                ExchangeDisplay()
                 HStack {
                     self.model.resource.hasResource { rate in
                         Text("Base: \(rate.base)\nDate: \(rate.date)")
