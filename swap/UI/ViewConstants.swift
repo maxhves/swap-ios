@@ -16,6 +16,12 @@ struct ViewConstants {
     static let regular: CGFloat = 16
     static let small: CGFloat = 8
     
+    // MARK: Font Size
+    static let primaryDisplaySize: CGFloat = 36
+    static let primaryDisplayNameSize: CGFloat = 18
+    static let secondaryDisplaySize: CGFloat = 30
+    static let secondaryDisplayNameSize: CGFloat = 16
+    
     // MARK: Keypad
     static let keypadPadding: CGFloat = 24
     static let keypadRows: Int = 4

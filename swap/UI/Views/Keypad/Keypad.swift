@@ -28,7 +28,7 @@ struct Keypad: View {
                             weight: .semibold,
                             design: .rounded)
                         )
-                        .foregroundColor(Color.textBody)
+                        .foregroundColor(Color.keypadKey)
                         .frame(
                             width: geometry.size.width / 3,
                             height: (geometry.size.height - ViewConstants.keypadPadding) / 4

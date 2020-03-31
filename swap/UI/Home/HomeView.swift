@@ -21,9 +21,8 @@ struct HomeView: View {
                 Text("\(self.key)")
                 Spacer()
                 HStack {
-                    Spacer()
                     self.model.resource.hasResource { rate in
-                        Text("Base: \(rate.base) Date: \(rate.date)")
+                        Text("Base: \(rate.base)\nDate: \(rate.date)")
                             .padding()
                     }
                     Spacer()

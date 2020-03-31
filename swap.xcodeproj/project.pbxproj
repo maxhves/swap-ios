@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50179EF824310DAB004CC9F9 /* ExchangeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50179EF724310DAB004CC9F9 /* ExchangeDisplay.swift */; };
 		50C181552430C90D0078536E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C181542430C90D0078536E /* HomeViewModel.swift */; };
 		50CEF1EF2429002C00DDCAC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF1EE2429002C00DDCAC3 /* AppDelegate.swift */; };
 		50CEF1F12429002C00DDCAC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF1F02429002C00DDCAC3 /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 		50CEF2052429042100DDCAC3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF2042429042100DDCAC3 /* HomeView.swift */; };
 		50CEF209242907F300DDCAC3 /* Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF208242907F300DDCAC3 /* Keypad.swift */; };
 		50CEF20B24290A9500DDCAC3 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF20A24290A9500DDCAC3 /* GridStack.swift */; };
+		50E531B224337CE60052972A /* ExchangeDisplayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E531B124337CE60052972A /* ExchangeDisplayDetail.swift */; };
 		50ED83F4242A2BA800878CB6 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ED83F3242A2BA800878CB6 /* ViewConstants.swift */; };
 		50F4A13C242E20D70010C37D /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A130242E20D70010C37D /* Rate.swift */; };
 		50F4A13D242E20D70010C37D /* ExchangeRatesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A133242E20D70010C37D /* ExchangeRatesNetwork.swift */; };
@@ -30,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50179EF724310DAB004CC9F9 /* ExchangeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDisplay.swift; sourceTree = "<group>"; };
 		50C181542430C90D0078536E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		50CEF1EB2429002C00DDCAC3 /* swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEF1EE2429002C00DDCAC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		50CEF2042429042100DDCAC3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50CEF208242907F300DDCAC3 /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
 		50CEF20A24290A9500DDCAC3 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		50E531B124337CE60052972A /* ExchangeDisplayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDisplayDetail.swift; sourceTree = "<group>"; };
 		50ED83F3242A2BA800878CB6 /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		50F4A130242E20D70010C37D /* Rate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		50F4A133242E20D70010C37D /* ExchangeRatesNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesNetwork.swift; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50179EF624310D7B004CC9F9 /* Exchange Display */ = {
+			isa = PBXGroup;
+			children = (
+				50179EF724310DAB004CC9F9 /* ExchangeDisplay.swift */,
+				50E531B124337CE60052972A /* ExchangeDisplayDetail.swift */,
+			);
+			path = "Exchange Display";
+			sourceTree = "<group>";
+		};
 		50CEF1E22429002C00DDCAC3 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +140,7 @@
 		50CEF206242907E300DDCAC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				50179EF624310D7B004CC9F9 /* Exchange Display */,
 				50CEF207242907E800DDCAC3 /* Keypad */,
 				50CEF20A24290A9500DDCAC3 /* GridStack.swift */,
 			);
@@ -275,9 +289,11 @@
 				50F4A13C242E20D70010C37D /* Rate.swift in Sources */,
 				50CEF2052429042100DDCAC3 /* HomeView.swift in Sources */,
 				50F4A143242E20D70010C37D /* Method.swift in Sources */,
+				50179EF824310DAB004CC9F9 /* ExchangeDisplay.swift in Sources */,
 				50ED83F4242A2BA800878CB6 /* ViewConstants.swift in Sources */,
 				50F4A144242E20D70010C37D /* NetworkViewModel.swift in Sources */,
 				50CEF20B24290A9500DDCAC3 /* GridStack.swift in Sources */,
+				50E531B224337CE60052972A /* ExchangeDisplayDetail.swift in Sources */,
 				50F4A13F242E20D70010C37D /* NetworkRoute.swift in Sources */,
 				50F4A13D242E20D70010C37D /* ExchangeRatesNetwork.swift in Sources */,
 				50CEF1F12429002C00DDCAC3 /* SceneDelegate.swift in Sources */,
