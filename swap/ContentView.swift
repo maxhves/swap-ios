@@ -16,6 +16,10 @@ extension Color {
     static let textSecondary = Color("textSecondary")
     static let keypadKey = Color("keypadKey")
     
+    static let swapButton = Color("swapButton")
+    static let swapPrimary = Color("swapPrimary")
+    static let swapSecondary = Color("swapSecondary")
+    
 }
 
 struct ContentView: View {

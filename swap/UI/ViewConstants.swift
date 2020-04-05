@@ -13,6 +13,7 @@ struct ViewConstants {
     
     // MARK: Dimensions
     static let large: CGFloat = 32
+    static let medium: CGFloat = 24
     static let regular: CGFloat = 16
     static let small: CGFloat = 8
     
@@ -28,5 +29,9 @@ struct ViewConstants {
     static let keypadColumns: Int = 3
     static let keypadHeightRatio: CGFloat = 2.5
     static let keyFontSize: CGFloat = 21
+    
+    // MARK: Currency Swap
+    static let swapButtonSize: CGFloat = 48
+    static let swapIconSize: CGFloat = 24
     
 }

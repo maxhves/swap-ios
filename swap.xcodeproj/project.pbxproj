@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50179EF824310DAB004CC9F9 /* ExchangeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50179EF724310DAB004CC9F9 /* ExchangeDisplay.swift */; };
+		507D61222437874A00729CE3 /* CurrencySwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D61212437874A00729CE3 /* CurrencySwap.swift */; };
 		50C181552430C90D0078536E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C181542430C90D0078536E /* HomeViewModel.swift */; };
 		50CEF1EF2429002C00DDCAC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF1EE2429002C00DDCAC3 /* AppDelegate.swift */; };
 		50CEF1F12429002C00DDCAC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEF1F02429002C00DDCAC3 /* SceneDelegate.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		50179EF724310DAB004CC9F9 /* ExchangeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDisplay.swift; sourceTree = "<group>"; };
+		507D61212437874A00729CE3 /* CurrencySwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySwap.swift; sourceTree = "<group>"; };
 		50C181542430C90D0078536E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		50CEF1EB2429002C00DDCAC3 /* swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEF1EE2429002C00DDCAC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 				50E531B124337CE60052972A /* ExchangeDisplayDetail.swift */,
 			);
 			path = "Exchange Display";
+			sourceTree = "<group>";
+		};
+		507D61202437873900729CE3 /* Currency Swap */ = {
+			isa = PBXGroup;
+			children = (
+				507D61212437874A00729CE3 /* CurrencySwap.swift */,
+			);
+			path = "Currency Swap";
 			sourceTree = "<group>";
 		};
 		50CEF1E22429002C00DDCAC3 = {
@@ -140,6 +150,7 @@
 		50CEF206242907E300DDCAC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				507D61202437873900729CE3 /* Currency Swap */,
 				50179EF624310D7B004CC9F9 /* Exchange Display */,
 				50CEF207242907E800DDCAC3 /* Keypad */,
 				50CEF20A24290A9500DDCAC3 /* GridStack.swift */,
@@ -297,6 +308,7 @@
 				50F4A13F242E20D70010C37D /* NetworkRoute.swift in Sources */,
 				50F4A13D242E20D70010C37D /* ExchangeRatesNetwork.swift in Sources */,
 				50CEF1F12429002C00DDCAC3 /* SceneDelegate.swift in Sources */,
+				507D61222437874A00729CE3 /* CurrencySwap.swift in Sources */,
 				50F4A13E242E20D70010C37D /* ExchageRatesRoute.swift in Sources */,
 				50CEF209242907F300DDCAC3 /* Keypad.swift in Sources */,
 				50CEF1F32429002C00DDCAC3 /* ContentView.swift in Sources */,
