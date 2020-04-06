@@ -17,6 +17,8 @@ struct HomeView: View {
         
         GeometryReader { geometry in
             VStack {
+                
+                // Exchange Display
                 ExchangeDisplay()
 //                HStack {
 //                    self.model.resource.hasResource { rate in
@@ -26,10 +28,12 @@ struct HomeView: View {
 //                    Spacer()
 //                }
                 
+                // Currency Swap
                 CurrencySwap(primary: "NOK", secondary: "USD")
                 
+                // Keypad
                 Keypad(keyPressed: self.$key)
-                    .background(Color.white)
+                    .background(Color.backgroundAccent)
                     .cornerRadius(ViewConstants.large)
                     .padding(.leading)
                     .padding(.trailing)

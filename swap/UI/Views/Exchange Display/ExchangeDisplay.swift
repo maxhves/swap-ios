@@ -15,6 +15,7 @@ struct ExchangeDisplay: View {
             
             VStack(spacing: 0) {
                 
+                // Primary
                 HStack {
                     VStack {
                         
@@ -24,8 +25,9 @@ struct ExchangeDisplay: View {
                     }
                     Spacer()
                 }
-                .background(Color.white)
+                .background(Color.backgroundAccent)
                 
+                // Secondary
                 HStack {
                     VStack {
                         

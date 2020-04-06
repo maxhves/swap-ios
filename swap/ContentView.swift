@@ -11,6 +11,7 @@ import SwiftUI
 extension Color {
 
     static let background = Color("background")
+    static let backgroundAccent = Color("backgroundAccent")
     
     static let textBody = Color("textBody")
     static let textSecondary = Color("textSecondary")
@@ -27,6 +28,7 @@ struct ContentView: View {
         
         ZStack {
             
+            // Home View 
             HomeView()
                 .environmentObject(HomeViewModel.init(with: ExchangeRatesNetwork()))
             
