@@ -33,5 +33,6 @@ struct ViewConstants {
     // MARK: Currency Swap
     static let swapButtonSize: CGFloat = 48
     static let swapIconSize: CGFloat = 24
+    static let swapFontSize: CGFloat = 20
     
 }

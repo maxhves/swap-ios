@@ -9,13 +9,22 @@
 import SwiftUI
 
 struct CurrencySwap: View {
+    
+    var primary: String
+    var secondary: String
+    
     var body: some View {
         
         HStack {
             
             // Primary
             Button(action: {}) {
-                Text("NOK")
+                Text("\(primary)")
+                    .font(.system(
+                        size: ViewConstants.swapFontSize,
+                        weight: .semibold,
+                        design: .rounded)
+                    )
                     .foregroundColor(Color.textSecondary)
             }
             .frame(height: ViewConstants.swapButtonSize)
@@ -37,7 +46,12 @@ struct CurrencySwap: View {
             
             // Secondary
             Button(action: {}) {
-                Text("USD")
+                Text("\(secondary)")
+                    .font(.system(
+                        size: ViewConstants.swapFontSize,
+                        weight: .semibold,
+                        design: .rounded)
+                    )
                     .foregroundColor(Color.textSecondary)
             }
             .frame(height: ViewConstants.swapButtonSize)
@@ -53,6 +67,6 @@ struct CurrencySwap: View {
 
 struct CurrencySwap_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencySwap()
+        CurrencySwap(primary: "NOK", secondary: "USD")
     }
 }

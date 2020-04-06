@@ -18,13 +18,16 @@ struct HomeView: View {
         GeometryReader { geometry in
             VStack {
                 ExchangeDisplay()
-                HStack {
-                    self.model.resource.hasResource { rate in
-                        Text("Base: \(rate.base)\nDate: \(rate.date)")
-                            .padding()
-                    }
-                    Spacer()
-                }
+//                HStack {
+//                    self.model.resource.hasResource { rate in
+//                        Text("Base: \(rate.base)\nDate: \(rate.date)")
+//                            .padding()
+//                    }
+//                    Spacer()
+//                }
+                
+                CurrencySwap(primary: "NOK", secondary: "USD")
+                
                 Keypad(keyPressed: self.$key)
                     .background(Color.white)
                     .cornerRadius(ViewConstants.large)
