@@ -16,10 +16,12 @@ struct HomeView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            VStack {
+            
+            VStack(spacing: 0) {
                 
                 // Exchange Display
                 ExchangeDisplay()
+                
 //                HStack {
 //                    self.model.resource.hasResource { rate in
 //                        Text("Base: \(rate.base)\nDate: \(rate.date)")
@@ -30,6 +32,7 @@ struct HomeView: View {
                 
                 // Currency Swap
                 CurrencySwap(primary: "NOK", secondary: "USD")
+                    .padding(.bottom, ViewConstants.medium)
                 
                 // Keypad
                 Keypad(keyPressed: self.$key)
@@ -46,6 +49,7 @@ struct HomeView: View {
             .background(Color.background)
             .edgesIgnoringSafeArea(.all)
             .onAppear(perform: self.model.onAppear)
+            
         }
         
     }
