@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var key: Int = 0
+    @State private var showCurrencySelection: Bool = false
     
     @EnvironmentObject var model: HomeViewModel
     
@@ -29,6 +30,16 @@ struct HomeView: View {
 //                    }
 //                    Spacer()
 //                }
+                
+                Button(action: {
+                    self.showCurrencySelection = true
+                }) {
+                    Text("Present Me")
+                }
+                .padding()
+                .sheet(isPresented: self.$showCurrencySelection) {
+                    CurrencySelectionView()
+                }
                 
                 // Currency Swap
                 CurrencySwap(primary: "NOK", secondary: "USD")
