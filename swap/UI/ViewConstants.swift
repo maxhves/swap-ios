@@ -18,6 +18,7 @@ struct ViewConstants {
     static let small: CGFloat = 8
     
     // MARK: Font Size
+    static let fontBody: CGFloat = 16
     static let primaryDisplaySize: CGFloat = 36
     static let primaryDisplayNameSize: CGFloat = 18
     static let secondaryDisplaySize: CGFloat = 30

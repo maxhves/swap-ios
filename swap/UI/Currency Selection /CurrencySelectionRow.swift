@@ -15,13 +15,30 @@ struct CurrencySelectionRow: View {
     var body: some View {
         HStack {
             Text("\(currency.name)")
+            .font(.system(
+                size: ViewConstants.fontBody,
+                weight: .bold,
+                design: .rounded)
+            )
+            .foregroundColor(Color.textStrong)
+            Spacer()
             Text("\(currency.fullName)")
+                .font(.system(
+                    size: ViewConstants.fontBody,
+                    weight: .medium,
+                    design: .rounded)
+                )
+                .foregroundColor(Color.textBody)
+            Image("\(currency.name.lowercased())")
+                .resizable()
+                .frame(width: 16, height: 16)
         }
     }
 }
 
 struct CurrencySelectionRow_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencySelectionRow(currency: Currency(name: "TST", fullName: "Test"))
+        CurrencySelectionRow(currency: Currency(name: "NOK", fullName: "Norwegian Kroners"))
+            .previewLayout(.fixed(width: 400, height: 50))
     }
 }
