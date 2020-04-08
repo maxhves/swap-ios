@@ -36,12 +36,7 @@ struct CurrencySelectionView: View {
                 .environment(\.horizontalSizeClass, .regular)
                 
             }
-            .navigationBarTitle(Text("Select Currency"), displayMode: .inline)
-            .navigationBarItems(leading:
-                Button(action: {}) {
-                    Text("Cancel")
-                }
-            )
+            .navigationBarTitle(Text("Select Currency"))
             
         }
         
