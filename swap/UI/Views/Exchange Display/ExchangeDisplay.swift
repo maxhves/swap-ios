@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ExchangeDisplay: View {
+    
+    @Binding var exchange: Exchange
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -20,7 +23,7 @@ struct ExchangeDisplay: View {
                     VStack {
                         
                         Spacer()
-                        ExchangeDisplayDetail(value: "0", name: "Norwegian Kroners")
+                        ExchangeDisplayDetail(value: "0", name: self.exchange.primary.fullName)
                         
                     }
                     Spacer()
@@ -31,7 +34,7 @@ struct ExchangeDisplay: View {
                 HStack {
                     VStack {
                         
-                        ExchangeDisplayDetail(value: "0", name: "United States Dollars")
+                        ExchangeDisplayDetail(value: "0", name: self.exchange.secondary.fullName)
                         Spacer()
                         
                     }
@@ -47,7 +50,12 @@ struct ExchangeDisplay: View {
 
 struct ExchangeDisplay_Previews: PreviewProvider {
     static var previews: some View {
-        ExchangeDisplay()
-            .background(Color.background)
+        ExchangeDisplay(
+            exchange: .constant(Exchange(
+                primary: Currency(name: "", fullName: ""),
+                secondary: Currency(name: "", fullName: "")
+            ))
+        )
+        .background(Color.background)
     }
 }

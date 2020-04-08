@@ -12,9 +12,7 @@ struct CurrencySwap: View {
     
     @Binding var showCurrencySelection: Bool
     @Binding var selection: String
-    
-    var primary: String
-    var secondary: String
+    @Binding var exchange: Exchange
     
     var body: some View {
         
@@ -25,7 +23,7 @@ struct CurrencySwap: View {
                 self.selection = "primary"
                 self.showCurrencySelection.toggle()
             }) {
-                Text("\(primary)")
+                Text(self.exchange.primary.name)
                     .font(.system(
                         size: ViewConstants.swapFontSize,
                         weight: .semibold,
@@ -55,7 +53,7 @@ struct CurrencySwap: View {
                 self.selection = "secondary"
                 self.showCurrencySelection.toggle()
             }) {
-                Text("\(secondary)")
+                Text(self.exchange.secondary.name)
                     .font(.system(
                         size: ViewConstants.swapFontSize,
                         weight: .semibold,
@@ -79,7 +77,9 @@ struct CurrencySwap_Previews: PreviewProvider {
         CurrencySwap(
             showCurrencySelection: .constant(false),
             selection: .constant("primary"),
-            primary: "NOK",
-            secondary: "USD")
+            exchange: .constant(
+                Exchange(
+                    primary: Currency(name: "NOK", fullName: ""),
+                    secondary: Currency(name: "USD", fullName: ""))))
     }
 }

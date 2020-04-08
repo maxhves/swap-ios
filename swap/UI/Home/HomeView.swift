@@ -12,8 +12,10 @@ struct HomeView: View {
     @State var key: Int = 0
     @State private var showCurrencySelection: Bool = false
     
-    @State private var primaryCurrency: String = "NOK"
-    @State private var secondaryCurrency: String = "USD"
+    @State private var exchange: Exchange = Exchange(
+        primary: Currency(name: "NOK", fullName: "Norwegian Kroners"),
+        secondary: Currency(name: "USD", fullName: "United States Dollars")
+    )
     @State private var selection: String = "primary"
     
     @EnvironmentObject var model: HomeViewModel
@@ -25,7 +27,7 @@ struct HomeView: View {
             VStack(spacing: 0) {
                 
                 // Exchange Display
-                ExchangeDisplay()
+                ExchangeDisplay(exchange: self.$exchange)
                 
 //                HStack {
 //                    self.model.resource.hasResource { rate in
@@ -39,14 +41,12 @@ struct HomeView: View {
                 CurrencySwap(
                     showCurrencySelection: self.$showCurrencySelection,
                     selection: self.$selection,
-                    primary: "\(self.primaryCurrency)",
-                    secondary: "\(self.secondaryCurrency)")
+                    exchange: self.$exchange)
                     .padding(.bottom, ViewConstants.medium)
                     .sheet(isPresented: self.$showCurrencySelection) {
                         CurrencySelectionView(
                             showCurrencySelection: self.$showCurrencySelection,
-                            primaryCurrency: self.$primaryCurrency,
-                            secondaryCurrency: self.$secondaryCurrency,
+                            exchange: self.$exchange,
                             selection: self.$selection)
                     }
                 
