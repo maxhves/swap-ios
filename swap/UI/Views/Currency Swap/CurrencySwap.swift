@@ -10,6 +10,9 @@ import SwiftUI
 
 struct CurrencySwap: View {
     
+    @Binding var showCurrencySelection: Bool
+    @Binding var selection: String
+    
     var primary: String
     var secondary: String
     
@@ -18,7 +21,10 @@ struct CurrencySwap: View {
         HStack {
             
             // Primary
-            Button(action: {}) {
+            Button(action: {
+                self.selection = "primary"
+                self.showCurrencySelection.toggle()
+            }) {
                 Text("\(primary)")
                     .font(.system(
                         size: ViewConstants.swapFontSize,
@@ -45,7 +51,10 @@ struct CurrencySwap: View {
             .cornerRadius(ViewConstants.large)
             
             // Secondary
-            Button(action: {}) {
+            Button(action: {
+                self.selection = "secondary"
+                self.showCurrencySelection.toggle()
+            }) {
                 Text("\(secondary)")
                     .font(.system(
                         size: ViewConstants.swapFontSize,
@@ -67,6 +76,10 @@ struct CurrencySwap: View {
 
 struct CurrencySwap_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencySwap(primary: "NOK", secondary: "USD")
+        CurrencySwap(
+            showCurrencySelection: .constant(false),
+            selection: .constant("primary"),
+            primary: "NOK",
+            secondary: "USD")
     }
 }

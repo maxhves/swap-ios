@@ -12,6 +12,10 @@ struct HomeView: View {
     @State var key: Int = 0
     @State private var showCurrencySelection: Bool = false
     
+    @State private var primaryCurrency: String = "NOK"
+    @State private var secondaryCurrency: String = "USD"
+    @State private var selection: String = "primary"
+    
     @EnvironmentObject var model: HomeViewModel
     
     var body: some View {
@@ -31,21 +35,20 @@ struct HomeView: View {
 //                    Spacer()
 //                }
                 
-                Button(action: {
-                    self.showCurrencySelection = true
-                }) {
-                    Text("Present Me")
-                }
-                .padding()
-                .sheet(isPresented: self.$showCurrencySelection) {
-                    CurrencySelectionView(
-                        showCurrencySelection: self.$showCurrencySelection,
-                        selection: "primary")
-                }
-                
                 // Currency Swap
-                CurrencySwap(primary: "NOK", secondary: "USD")
+                CurrencySwap(
+                    showCurrencySelection: self.$showCurrencySelection,
+                    selection: self.$selection,
+                    primary: "\(self.primaryCurrency)",
+                    secondary: "\(self.secondaryCurrency)")
                     .padding(.bottom, ViewConstants.medium)
+                    .sheet(isPresented: self.$showCurrencySelection) {
+                        CurrencySelectionView(
+                            showCurrencySelection: self.$showCurrencySelection,
+                            primaryCurrency: self.$primaryCurrency,
+                            secondaryCurrency: self.$secondaryCurrency,
+                            selection: self.$selection)
+                    }
                 
                 // Keypad
                 Keypad(keyPressed: self.$key)

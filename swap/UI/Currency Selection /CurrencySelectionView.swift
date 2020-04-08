@@ -11,10 +11,11 @@ import SwiftUI
 struct CurrencySelectionView: View {
     
     @Binding var showCurrencySelection: Bool
+    @Binding var primaryCurrency: String
+    @Binding var secondaryCurrency: String
+    @Binding var selection: String
     
     private let currencies = Currency.provideCurrencyList()
-    
-    var selection: String
     
     var body: some View {
         
@@ -31,6 +32,11 @@ struct CurrencySelectionView: View {
                         ) {
                             ForEach(section.currencies) { currency in
                                 Button(action: {
+                                    if self.selection == "primary" {
+                                        self.primaryCurrency = currency.name
+                                    } else {
+                                        self.secondaryCurrency = currency.name
+                                    }
                                     self.showCurrencySelection.toggle()
                                 }) {
                                     CurrencySelectionRow(currency: currency)
@@ -54,6 +60,10 @@ struct CurrencySelectionView: View {
 
 struct CurrencySelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencySelectionView(showCurrencySelection: .constant(true),selection: "primary")
+        CurrencySelectionView(
+            showCurrencySelection: .constant(true),
+            primaryCurrency: .constant("NOK"),
+            secondaryCurrency: .constant("USD"),
+            selection: .constant("primary"))
     }
 }
