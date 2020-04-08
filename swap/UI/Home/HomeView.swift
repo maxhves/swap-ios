@@ -38,7 +38,9 @@ struct HomeView: View {
                 }
                 .padding()
                 .sheet(isPresented: self.$showCurrencySelection) {
-                    CurrencySelectionView()
+                    CurrencySelectionView(
+                        showCurrencySelection: self.$showCurrencySelection,
+                        selection: "primary")
                 }
                 
                 // Currency Swap

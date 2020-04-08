@@ -33,6 +33,7 @@ struct CurrencySelectionRow: View {
                 .resizable()
                 .frame(width: 16, height: 16)
         }
+        .contentShape(Rectangle())
     }
 }
 

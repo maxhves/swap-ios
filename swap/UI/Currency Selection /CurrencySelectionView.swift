@@ -10,7 +10,11 @@ import SwiftUI
 
 struct CurrencySelectionView: View {
     
+    @Binding var showCurrencySelection: Bool
+    
     private let currencies = Currency.provideCurrencyList()
+    
+    var selection: String
     
     var body: some View {
         
@@ -26,7 +30,12 @@ struct CurrencySelectionView: View {
                                 .padding(.top, section.title == "Africa" ? ViewConstants.medium : 0)
                         ) {
                             ForEach(section.currencies) { currency in
-                                CurrencySelectionRow(currency: currency)
+                                Button(action: {
+                                    self.showCurrencySelection.toggle()
+                                }) {
+                                    CurrencySelectionRow(currency: currency)
+                                }
+                                .buttonStyle(PlainButtonStyle())
                             }
                         }
                     }
@@ -45,6 +54,6 @@ struct CurrencySelectionView: View {
 
 struct CurrencySelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencySelectionView()
+        CurrencySelectionView(showCurrencySelection: .constant(true),selection: "primary")
     }
 }
