@@ -13,6 +13,13 @@ struct Exchange {
     
     var primary: Currency
     var secondary: Currency
-    var currentValue: Decimal = 0.0
+    
+    var currentValue: Decimal = 0.0 {
+        didSet {
+            currentDisplayValue += "\(self.currentValue)"
+        }
+    }
+    
+    var currentDisplayValue: String = "0"
     
 }
