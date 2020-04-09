@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var key: Int = 0
     @State private var showCurrencySelection: Bool = false
     
     @State private var exchange: Exchange = Exchange(
@@ -51,7 +50,7 @@ struct HomeView: View {
                     }
                 
                 // Keypad
-                Keypad(keyPressed: self.$key)
+                Keypad(exchange: self.$exchange)
                     .background(Color.backgroundAccent)
                     .cornerRadius(ViewConstants.large)
                     .padding(.leading)

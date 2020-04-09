@@ -12,6 +12,8 @@ struct ExchangeDisplay: View {
     
     @Binding var exchange: Exchange
     
+    @State var primaryValue: String = "0"
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -23,7 +25,7 @@ struct ExchangeDisplay: View {
                     VStack {
                         
                         Spacer()
-                        ExchangeDisplayDetail(value: "0", name: self.exchange.primary.fullName)
+                        ExchangeDisplayDetail(value: self.currentValueAsDisplay(), name: self.exchange.primary.fullName)
                         
                     }
                     Spacer()
@@ -46,14 +48,21 @@ struct ExchangeDisplay: View {
         }
         
     }
+    
+    func currentValueAsDisplay() -> String {
+        var newValue = primaryValue
+        newValue += "\(exchange.currentValue)"
+        return newValue
+    }
+    
 }
 
 struct ExchangeDisplay_Previews: PreviewProvider {
     static var previews: some View {
         ExchangeDisplay(
             exchange: .constant(Exchange(
-                primary: Currency(name: "", fullName: ""),
-                secondary: Currency(name: "", fullName: "")
+                primary: Currency(name: "NOK", fullName: "Norwegian Kroners"),
+                secondary: Currency(name: "USD", fullName: "United States Dollars")
             ))
         )
         .background(Color.background)

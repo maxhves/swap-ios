@@ -13,5 +13,6 @@ struct Exchange {
     
     var primary: Currency
     var secondary: Currency
+    var currentValue: Decimal = 0.0
     
 }
