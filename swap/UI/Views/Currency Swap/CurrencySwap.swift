@@ -14,9 +14,13 @@ struct CurrencySwap: View {
     @Binding var selection: String
     @Binding var exchange: Exchange
     
+    @State var primaryOffsetX: CGFloat = 0
+    
+    @State var swapped: Bool = false
+    
     var body: some View {
         
-        HStack {
+        HStack(spacing: ViewConstants.small) {
             
             // Primary
             Button(action: {
@@ -30,23 +34,33 @@ struct CurrencySwap: View {
                         design: .rounded)
                     )
                     .foregroundColor(Color.textSecondary)
+                    .frame(width: ViewConstants.swapButtonWidth, height: ViewConstants.swapButtonHeight)
             }
-            .frame(height: ViewConstants.swapButtonSize)
-            .padding(.leading, ViewConstants.medium)
-            .padding(.trailing, ViewConstants.medium)
             .background(Color.swapPrimary)
             .cornerRadius(ViewConstants.large)
+            .offset(x: self.primaryOffsetX, y: 0)
             
             // Swap
-            Button(action: {}) {
+            Button(action: {
+                withAnimation(.easeInOut(duration: 0.2), {
+                    if !self.swapped {
+                        self.primaryOffsetX = 144
+                        self.swapped = true
+                    } else {
+                        self.primaryOffsetX = 0
+                        self.swapped = false
+                    }
+                })
+            }) {
                 Image(systemName: "arrow.right.arrow.left.circle")
                     .resizable()
                     .frame(width: ViewConstants.swapIconSize, height: ViewConstants.swapIconSize)
                     .foregroundColor(Color.textSecondary)
             }
-            .frame(width: ViewConstants.swapButtonSize, height: ViewConstants.swapButtonSize)
+            .frame(width: ViewConstants.swapButtonHeight, height: ViewConstants.swapButtonHeight)
             .background(Color.swapButton)
             .cornerRadius(ViewConstants.large)
+            .zIndex(1.0)
             
             // Secondary
             Button(action: {
@@ -60,12 +74,11 @@ struct CurrencySwap: View {
                         design: .rounded)
                     )
                     .foregroundColor(Color.textSecondary)
+                    .frame(width: ViewConstants.swapButtonWidth, height: ViewConstants.swapButtonHeight)
             }
-            .frame(height: ViewConstants.swapButtonSize)
-            .padding(.leading, ViewConstants.medium)
-            .padding(.trailing, ViewConstants.medium)
             .background(Color.swapSecondary)
             .cornerRadius(ViewConstants.large)
+            .offset(x: -self.primaryOffsetX, y: CGFloat(0.0))
             
         }
         
