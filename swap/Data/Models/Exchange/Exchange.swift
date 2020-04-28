@@ -16,7 +16,28 @@ struct Exchange {
     
     var currentValue: Decimal = 0.0 {
         didSet {
-            currentDisplayValue += "\(self.currentValue)"
+            if currentDisplayValue == "0" {
+                currentDisplayValue = ""
+            }
+
+            switch self.currentValue {
+            case -1:
+                if !currentDisplayValue.contains(".") {
+                    if currentDisplayValue.count == 0 {
+                        currentDisplayValue = "0."
+                    } else {
+                        currentDisplayValue += "."
+                    }
+                }
+            case -2:
+                if currentDisplayValue.count <= 1 {
+                    currentDisplayValue = "0"
+                } else {
+                    currentDisplayValue = String(currentDisplayValue.dropLast())
+                }
+            default:
+                currentDisplayValue += "\(self.currentValue)"
+            }
         }
     }
     
