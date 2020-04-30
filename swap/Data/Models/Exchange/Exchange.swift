@@ -16,31 +16,35 @@ struct Exchange {
     
     var currentValue: Decimal = 0.0 {
         didSet {
-            if currentDisplayValue == "0" {
-                currentDisplayValue = ""
+            if primaryValueDisplay == "0" {
+                primaryValueDisplay = ""
             }
 
             switch self.currentValue {
             case -1:
-                if !currentDisplayValue.contains(".") {
-                    if currentDisplayValue.count == 0 {
-                        currentDisplayValue = "0."
+                if !primaryValueDisplay.contains(".") {
+                    if primaryValueDisplay.count == 0 {
+                        primaryValueDisplay = "0."
                     } else {
-                        currentDisplayValue += "."
+                        primaryValueDisplay += "."
                     }
                 }
             case -2:
-                if currentDisplayValue.count <= 1 {
-                    currentDisplayValue = "0"
+                if primaryValueDisplay.count <= 1 {
+                    primaryValueDisplay = "0"
                 } else {
-                    currentDisplayValue = String(currentDisplayValue.dropLast())
+                    primaryValueDisplay = String(primaryValueDisplay.dropLast())
                 }
             default:
-                currentDisplayValue += "\(self.currentValue)"
+                primaryValueDisplay += "\(self.currentValue)"
             }
+            
+            let primaryValue = Decimal(string: primaryValueDisplay)
+            secondaryValueDisplay = "\((primaryValue ?? 0) * 2)"
         }
     }
     
-    var currentDisplayValue: String = "0"
+    var primaryValueDisplay: String = "0"
+    var secondaryValueDisplay: String = "0"
     
 }

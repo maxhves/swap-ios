@@ -23,7 +23,7 @@ struct ExchangeDisplay: View {
                     VStack {
                         
                         Spacer()
-                        ExchangeDisplayDetail(value: "\(self.exchange.currentDisplayValue)", name: self.exchange.primary.fullName)
+                        ExchangeDisplayDetail(value: "\(self.exchange.primaryValueDisplay)", name: self.exchange.primary.fullName)
                         
                     }
                     Spacer()
@@ -34,7 +34,7 @@ struct ExchangeDisplay: View {
                 HStack {
                     VStack {
                         
-                        ExchangeDisplayDetail(value: "0", name: self.exchange.secondary.fullName)
+                        ExchangeDisplayDetail(value: "\(self.exchange.secondaryValueDisplay)", name: self.exchange.secondary.fullName)
                         Spacer()
                         
                     }

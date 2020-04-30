@@ -22,17 +22,26 @@ struct Keypad: View {
                     let index = row * ViewConstants.keypadColumns + column
                     self.handleKeyPressed(index)
                 }) {
-                    Text("\(self.keys[row * ViewConstants.keypadColumns + column])")
-                        .font(.system(
-                            size: ViewConstants.keyFontSize,
-                            weight: .semibold,
-                            design: .rounded)
-                        )
-                        .foregroundColor(Color.keypadKey)
-                        .frame(
-                            width: geometry.size.width / 3,
-                            height: (geometry.size.height - ViewConstants.keypadPadding) / 4
-                        )
+                    if (row * ViewConstants.keypadColumns + column) == 11 {
+                        Image(systemName: "delete.left.fill")
+                            .foregroundColor(Color.keypadKey)
+                            .frame(
+                                width: geometry.size.width / 3,
+                                height: (geometry.size.height - ViewConstants.keypadPadding) / 4
+                            )
+                    } else {
+                        Text("\(self.keys[row * ViewConstants.keypadColumns + column])")
+                            .font(.system(
+                                size: ViewConstants.keyFontSize,
+                                weight: .semibold,
+                                design: .rounded)
+                            )
+                            .foregroundColor(Color.keypadKey)
+                            .frame(
+                                width: geometry.size.width / 3,
+                                height: (geometry.size.height - ViewConstants.keypadPadding) / 4
+                            )
+                    }
                 }
             }
         }
