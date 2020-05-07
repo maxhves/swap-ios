@@ -34,6 +34,7 @@
 		50F4A142242E20D70010C37D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A139242E20D70010C37D /* Resource.swift */; };
 		50F4A143242E20D70010C37D /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A13A242E20D70010C37D /* Method.swift */; };
 		50F4A144242E20D70010C37D /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A13B242E20D70010C37D /* NetworkViewModel.swift */; };
+		D87FEB352464829F005BAFB4 /* SwapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D87FEB332464829F005BAFB4 /* SwapModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		50F4A139242E20D70010C37D /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		50F4A13A242E20D70010C37D /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		50F4A13B242E20D70010C37D /* NetworkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
+		D87FEB342464829F005BAFB4 /* SwapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwapModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				50CEF1F92429002D00DDCAC3 /* LaunchScreen.storyboard */,
 				50CEF1FC2429002D00DDCAC3 /* Info.plist */,
 				50CEF1F62429002D00DDCAC3 /* Preview Content */,
+				D87FEB332464829F005BAFB4 /* SwapModel.xcdatamodeld */,
 			);
 			path = swap;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				507D61222437874A00729CE3 /* CurrencySwap.swift in Sources */,
 				50F4A13E242E20D70010C37D /* ExchageRatesRoute.swift in Sources */,
 				506E36E8243E08CD00B2E616 /* Exchange.swift in Sources */,
+				D87FEB352464829F005BAFB4 /* SwapModel.xcdatamodeld in Sources */,
 				50CEF209242907F300DDCAC3 /* Keypad.swift in Sources */,
 				50CEF1F32429002C00DDCAC3 /* ContentView.swift in Sources */,
 				50F4A142242E20D70010C37D /* Resource.swift in Sources */,
@@ -530,6 +534,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D87FEB332464829F005BAFB4 /* SwapModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D87FEB342464829F005BAFB4 /* SwapModel.xcdatamodel */,
+			);
+			currentVersion = D87FEB342464829F005BAFB4 /* SwapModel.xcdatamodel */;
+			path = SwapModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50CEF1E32429002C00DDCAC3 /* Project object */;
 }
