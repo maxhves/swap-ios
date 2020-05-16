@@ -10,7 +10,9 @@ import Foundation
 
 struct Rate: Decodable {
     
+    var id: UUID
     var base: String
-    var date: String
+    var date: Date
+    var rates: String
     
 }

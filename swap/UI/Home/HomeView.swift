@@ -19,6 +19,8 @@ struct HomeView: View {
     
     @EnvironmentObject var model: HomeViewModel
     
+    @FetchRequest(entity: LocalRate.entity(), sortDescriptors: []) var rates: FetchedResults<LocalRate>
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -28,13 +30,13 @@ struct HomeView: View {
                 // Exchange Display
                 ExchangeDisplay(exchange: self.$exchange)
                 
-//                HStack {
-//                    self.model.resource.hasResource { rate in
-//                        Text("Base: \(rate.base)\nDate: \(rate.date)")
-//                            .padding()
-//                    }
-//                    Spacer()
-//                }
+                HStack {
+                    self.model.resource.hasResource { rate in
+                        Text("Base: \(rate.base)\nDate: \(rate.date)")
+                            .padding()
+                    }
+                    Spacer()
+                }
                 
                 // Currency Swap
                 CurrencySwap(
@@ -66,6 +68,10 @@ struct HomeView: View {
             .onAppear(perform: self.model.onAppear)
             
         }
+        
+    }
+    
+    func saveRate(rate: Rate) {
         
     }
 }
