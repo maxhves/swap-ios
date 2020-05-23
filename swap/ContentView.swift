@@ -25,21 +25,30 @@ extension Color {
 }
 
 struct ContentView: View {
+    
+    @SwiftUI.Environment(\.managedObjectContext) var managedObjectContext
+    
     var body: some View {
         
         ZStack {
             
             // Home View 
             HomeView()
-                .environmentObject(HomeViewModel.init(with: ExchangeRatesNetwork()))
             
         }
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+class ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+
+    #if DEBUG
+    @objc class func injected() {
+        UIApplication.shared.windows.first?.rootViewController =
+                UIHostingController(rootView: ContentView_Previews.previews)
+    }
+    #endif
 }

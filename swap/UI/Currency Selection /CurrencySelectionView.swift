@@ -14,7 +14,7 @@ struct CurrencySelectionView: View {
     @Binding var exchange: Exchange
     @Binding var selection: String
     
-    private let currencies = Currency.provideCurrencyList()
+    private let currencies = Currency.currencySections
     
     var body: some View {
         
@@ -63,8 +63,8 @@ struct CurrencySelectionView_Previews: PreviewProvider {
             showCurrencySelection: .constant(true),
             exchange: .constant(
                 Exchange(
-                    primary: Currency(name: "", fullName: ""),
-                    secondary: Currency(name: "", fullName: ""))),
+                    primary: Currency(name: "", fullName: "", continent: .Australia),
+                    secondary: Currency(name: "", fullName: "", continent: .Australia))),
             selection: .constant("primary"))
     }
 }

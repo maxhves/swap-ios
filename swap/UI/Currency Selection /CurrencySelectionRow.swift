@@ -39,7 +39,7 @@ struct CurrencySelectionRow: View {
 
 struct CurrencySelectionRow_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencySelectionRow(currency: Currency(name: "NOK", fullName: "Norwegian Kroners"))
+        CurrencySelectionRow(currency: Currency(name: "NOK", fullName: "Norwegian Kroners", continent: .Europe))
             .previewLayout(.fixed(width: 400, height: 50))
     }
 }

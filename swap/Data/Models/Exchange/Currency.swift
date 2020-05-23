@@ -8,110 +8,102 @@
 
 import Foundation
 
-struct Currency : Identifiable {
-    
-    struct CurrencySection : Identifiable {
-        var id: String { title }
+struct Currency: Identifiable {
+
+    enum Continent {
+        case Asia
+        case Australia
+        case Africa
+        case Europe
+        case NorthAmerica
+        case SouthAmerica
+    }
+
+    struct CurrencySection: Identifiable {
+        var id: String {
+            title
+        }
         var title: String
         var currencies: [Currency]
     }
-    
-    var id: String { name }
+
+    var id: String {
+        name
+    }
     var name: String
     var fullName: String
-    
-    static func provideCurrencyList() -> [CurrencySection] {
-        return [
-            provideAfricanCurrencies(),
-            provideAsianCurrencies(),
-            provideAustralianCurrencies(),
-            provideEuropeanCurrencies(),
-            provideNorthAmericanCurrencies(),
-            provideSouthAmericanCurrencies()
-        ]
-    }
-    
-    private static func provideAfricanCurrencies() -> CurrencySection {
-        return CurrencySection(
-            title: "Africa",
-            currencies: [
-                Currency(name: "ZAR", fullName: "South African Rand")
-            ]
-        )
-    }
-    
-    private static func provideAsianCurrencies() -> CurrencySection {
-        return CurrencySection(
-            title: "Asia",
-            currencies: [
-                Currency(name: "CNY", fullName: "Chinese Yuan"),
-                Currency(name: "HKD", fullName: "Hong Kong Dollars"),
-                Currency(name: "IDR", fullName: "Indonesian Rupiajh"),
-                Currency(name: "ILS", fullName: "Israeli New Shekel"),
-                Currency(name: "INR", fullName: "Indian Rupee"),
-                Currency(name: "JPY", fullName: "Japanese Yen"),
-                Currency(name: "KRW", fullName: "South Korean Won"),
-                Currency(name: "MYR", fullName: "Malaysian Ringgit"),
-                Currency(name: "PHP", fullName: "Philippine Peso"),
-                Currency(name: "RUB", fullName: "Russian Ruble"),
-                Currency(name: "SGD", fullName: "Singapore Dollar"),
-                Currency(name: "THB", fullName: "Thai Baht"),
-                Currency(name: "TRY", fullName: "Turkish Lira")
-            ]
-        )
-    }
+    var continent: Continent
 
-    private static func provideAustralianCurrencies() -> CurrencySection {
-        return CurrencySection(
-            title: "Australia",
-            currencies: [
-                Currency(name: "AUD", fullName: "Australian Dollars"),
-                Currency(name: "NZD", fullName: "New Zealand Dollars")
-            ]
-        )
-    }
+    static let currencySections: [CurrencySection] = [
+        CurrencySection(
+                title: "Africa",
+                currencies: currencies.filter({ currency in
+                    currency.continent == .Africa
+                })),
+        CurrencySection(
+                title: "Asia",
+                currencies: currencies.filter({ currency in
+                    currency.continent == .Asia
+                })),
+        CurrencySection(
+                title: "Australia",
+                currencies: currencies.filter({ currency in
+                    currency.continent == .Australia
+                })),
+        CurrencySection(
+                title: "Europe",
+                currencies: currencies.filter({ currency in
+                    currency.continent == .Europe
+                })),
+        CurrencySection(
+                title: "North America",
+                currencies: currencies.filter({ currency in
+                    currency.continent == .NorthAmerica
+                })),
+        CurrencySection(
+                title: "South America",
+                currencies: currencies.filter({ currency in
+                    currency.continent == .SouthAmerica
+                }))
+    ]
 
-    private static func provideEuropeanCurrencies() -> CurrencySection {
-        return CurrencySection(
-            title: "Europe",
-            currencies: [
-                Currency(name: "BGN", fullName: "Bulgarian Lev"),
-                Currency(name: "CHF", fullName: "Swiss Francs"),
-                Currency(name: "CZK", fullName: "Czech Koruna"),
-                Currency(name: "DKK", fullName: "Danish Kroner"),
-                Currency(name: "EUR", fullName: "Euros"),
-                Currency(name: "GBP", fullName: "Great British Pounds"),
-                Currency(name: "HRK", fullName: "Croatian Kuna"),
-                Currency(name: "HUF", fullName: "Hungarian Forint"),
-                Currency(name: "ISK", fullName: "Icelandic Kroner"),
-                Currency(name: "NOK", fullName: "Norwegian Kroner"),
-                Currency(name: "PLN", fullName: "Poland Zloty"),
-                Currency(name: "RON", fullName: "Romanian Leu"),
-                Currency(name: "RUB", fullName: "Russian Ruble"),
-                Currency(name: "SEK", fullName: "Swedish Kroner"),
-                Currency(name: "TRY", fullName: "Turkish Lira")
-            ]
-        )
-    }
+    // MARK: Full currency array
+    static let currencies: Array<Currency> = [
+        Currency(name: "ZAR", fullName: "South African Rand", continent: .Africa),
+        Currency(name: "CNY", fullName: "Chinese Yuan", continent: .Asia),
+        Currency(name: "HKD", fullName: "Hong Kong Dollars", continent: .Asia),
+        Currency(name: "IDR", fullName: "Indonesian Rupiajh", continent: .Asia),
+        Currency(name: "ILS", fullName: "Israeli New Shekel", continent: .Asia),
+        Currency(name: "INR", fullName: "Indian Rupee", continent: .Asia),
+        Currency(name: "JPY", fullName: "Japanese Yen", continent: .Asia),
+        Currency(name: "KRW", fullName: "South Korean Won", continent: .Asia),
+        Currency(name: "MYR", fullName: "Malaysian Ringgit", continent: .Asia),
+        Currency(name: "PHP", fullName: "Philippine Peso", continent: .Asia),
+        Currency(name: "RUB", fullName: "Russian Ruble", continent: .Asia),
+        Currency(name: "SGD", fullName: "Singapore Dollar", continent: .Asia),
+        Currency(name: "THB", fullName: "Thai Baht", continent: .Asia),
+        Currency(name: "TRY", fullName: "Turkish Lira", continent: .Asia),
+        Currency(name: "AUD", fullName: "Australian Dollars", continent: .Australia),
+        Currency(name: "NZD", fullName: "New Zealand Dollars", continent: .Australia),
+        Currency(name: "BGN", fullName: "Bulgarian Lev", continent: .Europe),
+        Currency(name: "CHF", fullName: "Swiss Francs", continent: .Europe),
+        Currency(name: "CZK", fullName: "Czech Koruna", continent: .Europe),
+        Currency(name: "DKK", fullName: "Danish Kroner", continent: .Europe),
+        Currency(name: "EUR", fullName: "Euros", continent: .Europe),
+        Currency(name: "GBP", fullName: "Great British Pounds", continent: .Europe),
+        Currency(name: "HRK", fullName: "Croatian Kuna", continent: .Europe),
+        Currency(name: "HUF", fullName: "Hungarian Forint", continent: .Europe),
+        Currency(name: "ISK", fullName: "Icelandic Kroner", continent: .Europe),
+        Currency(name: "NOK", fullName: "Norwegian Kroner", continent: .Europe),
+        Currency(name: "PLN", fullName: "Poland Zloty", continent: .Europe),
+        Currency(name: "RON", fullName: "Romanian Leu", continent: .Europe),
+        Currency(name: "RUB", fullName: "Russian Ruble", continent: .Europe),
+        Currency(name: "SEK", fullName: "Swedish Kroner", continent: .Europe),
+        Currency(name: "TRY", fullName: "Turkish Lira", continent: .Europe),
+        Currency(name: "CAD", fullName: "Canadian Dollars", continent: .NorthAmerica),
+        Currency(name: "USD", fullName: "United States Dollars", continent: .NorthAmerica),
+        Currency(name: "BRL", fullName: "Brazilian Real", continent: .SouthAmerica),
+        Currency(name: "MXN", fullName: "Mexican Peso", continent: .SouthAmerica)
+    ]
 
-    private static func provideNorthAmericanCurrencies() -> CurrencySection {
-        return CurrencySection(
-            title: "North America",
-            currencies: [
-                Currency(name: "CAD", fullName: "Canadian Dollars"),
-                Currency(name: "USD", fullName: "United States Dollars")
-            ]
-        )
-    }
-
-    private static func provideSouthAmericanCurrencies() -> CurrencySection {
-        return CurrencySection(
-            title: "South America",
-            currencies: [
-                Currency(name: "BRL", fullName: "Brazilian Real"),
-                Currency(name: "MXN", fullName: "Mexican Peso")
-            ]
-        )
-    }
-    
 }

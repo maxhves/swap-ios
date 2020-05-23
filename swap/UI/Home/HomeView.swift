@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var model: HomeViewModel = HomeViewModel()
+
     @State private var showCurrencySelection: Bool = false
-    
     @State private var exchange: Exchange = Exchange(
-        primary: Currency(name: "NOK", fullName: "Norwegian Kroners"),
-        secondary: Currency(name: "USD", fullName: "United States Dollars")
+        primary: Currency(name: "NOK", fullName: "Norwegian Kroners", continent: .Europe),
+        secondary: Currency(name: "USD", fullName: "United States Dollars", continent: .NorthAmerica)
     )
     @State private var selection: String = "primary"
     
-    @EnvironmentObject var model: HomeViewModel
-    
     @FetchRequest(entity: LocalRate.entity(), sortDescriptors: []) var rates: FetchedResults<LocalRate>
+    @SwiftUI.Environment(\.managedObjectContext) var managedObjectContext
     
     var body: some View {
         
@@ -29,14 +29,6 @@ struct HomeView: View {
                 
                 // Exchange Display
                 ExchangeDisplay(exchange: self.$exchange)
-                
-                HStack {
-                    self.model.resource.hasResource { rate in
-                        Text("Base: \(rate.base)\nDate: \(rate.date)")
-                            .padding()
-                    }
-                    Spacer()
-                }
                 
                 // Currency Swap
                 CurrencySwap(
@@ -65,20 +57,19 @@ struct HomeView: View {
             }
             .background(Color.background)
             .edgesIgnoringSafeArea(.all)
-            .onAppear(perform: self.model.onAppear)
             
         }
         
     }
-    
-    func saveRate(rate: Rate) {
-        
+
+    private func printRate(rate: Rate) {
+        print(rate)
     }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(HomeViewModel(with: ExchangeRatesNetwork()))
     }
 }

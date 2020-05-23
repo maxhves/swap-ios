@@ -92,7 +92,7 @@ struct CurrencySwap_Previews: PreviewProvider {
             selection: .constant("primary"),
             exchange: .constant(
                 Exchange(
-                    primary: Currency(name: "NOK", fullName: ""),
-                    secondary: Currency(name: "USD", fullName: ""))))
+                    primary: Currency(name: "NOK", fullName: "", continent: .Europe),
+                    secondary: Currency(name: "USD", fullName: "", continent: .NorthAmerica))))
     }
 }

@@ -94,8 +94,8 @@ struct Keypad_Previews: PreviewProvider {
     static var previews: some View {
         Keypad(
             exchange: .constant(Exchange(
-                primary: Currency(name: "NOK", fullName: "Norwegian Kroners"),
-                secondary: Currency(name: "USD", fullName: "United States Dollars")
+                primary: Currency(name: "NOK", fullName: "Norwegian Kroners", continent: .Europe),
+                secondary: Currency(name: "USD", fullName: "United States Dollars", continent: .NorthAmerica)
             ))
         )
     }

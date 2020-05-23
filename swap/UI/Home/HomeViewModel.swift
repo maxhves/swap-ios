@@ -9,19 +9,29 @@
 import Foundation
 import Combine
 
-class HomeViewModel: NetworkViewModel, ObservableObject {
-    
-    typealias NetworkResource = Rate
-    
-    // MARK: Properties
-    var resource: Resource<NetworkResource> = .loading
-    var network: Network
-    var route: NetworkRoute = ExchangeRatesRoute.rate
-    var bag: Set<AnyCancellable> = Set<AnyCancellable>()
-    
-    // MARK: Init
-    init(with network: Network) {
-        self.network = network
+class HomeViewModel: ObservableObject {
+
+    var cancellationToken: AnyCancellable?
+
+    init() {
+        getLatestRate()
     }
-    
+
+}
+
+extension HomeViewModel {
+
+    private func getLatestRate() {
+        cancellationToken = ExchangeRatesService.request(.latest)
+            .mapError({ (error) -> Error in
+                print(error)
+                return error
+            })
+            .sink(receiveCompletion: { _ in },
+                receiveValue: { rate in
+                    let test = rate
+                    print("Returned rate: \(rate)")
+                })
+    }
+
 }

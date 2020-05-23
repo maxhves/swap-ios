@@ -8,11 +8,10 @@
 
 import Foundation
 
-struct Rate: Decodable {
-    
-    var id: UUID
-    var base: String
-    var date: Date
-    var rates: String
+struct Rate: Codable {
+
+    let base: String
+    let date: String
+    let rates: [String: Decimal]
     
 }

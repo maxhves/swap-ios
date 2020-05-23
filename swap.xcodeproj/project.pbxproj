@@ -26,15 +26,10 @@
 		50E531B224337CE60052972A /* ExchangeDisplayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E531B124337CE60052972A /* ExchangeDisplayDetail.swift */; };
 		50ED83F4242A2BA800878CB6 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ED83F3242A2BA800878CB6 /* ViewConstants.swift */; };
 		50F4A13C242E20D70010C37D /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A130242E20D70010C37D /* Rate.swift */; };
-		50F4A13D242E20D70010C37D /* ExchangeRatesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A133242E20D70010C37D /* ExchangeRatesNetwork.swift */; };
-		50F4A13E242E20D70010C37D /* ExchageRatesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A134242E20D70010C37D /* ExchageRatesRoute.swift */; };
-		50F4A13F242E20D70010C37D /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A136242E20D70010C37D /* NetworkRoute.swift */; };
-		50F4A140242E20D70010C37D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A137242E20D70010C37D /* Environment.swift */; };
-		50F4A141242E20D70010C37D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A138242E20D70010C37D /* Network.swift */; };
-		50F4A142242E20D70010C37D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A139242E20D70010C37D /* Resource.swift */; };
-		50F4A143242E20D70010C37D /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A13A242E20D70010C37D /* Method.swift */; };
-		50F4A144242E20D70010C37D /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4A13B242E20D70010C37D /* NetworkViewModel.swift */; };
+		B488C0F2746FEE8505269DA4 /* ExchangeRatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488C2F8D807FBB35379F461 /* ExchangeRatesService.swift */; };
+		B488C6BEA2352029D155594B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488CAE9DE750219B2C18E83 /* ApiClient.swift */; };
 		D87FEB352464829F005BAFB4 /* SwapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D87FEB332464829F005BAFB4 /* SwapModel.xcdatamodeld */; };
+		D8CE5C3724766647005DA416 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE5C3624766647005DA416 /* DictionaryExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,15 +54,10 @@
 		50E531B124337CE60052972A /* ExchangeDisplayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDisplayDetail.swift; sourceTree = "<group>"; };
 		50ED83F3242A2BA800878CB6 /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		50F4A130242E20D70010C37D /* Rate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
-		50F4A133242E20D70010C37D /* ExchangeRatesNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesNetwork.swift; sourceTree = "<group>"; };
-		50F4A134242E20D70010C37D /* ExchageRatesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchageRatesRoute.swift; sourceTree = "<group>"; };
-		50F4A136242E20D70010C37D /* NetworkRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
-		50F4A137242E20D70010C37D /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		50F4A138242E20D70010C37D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		50F4A139242E20D70010C37D /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		50F4A13A242E20D70010C37D /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
-		50F4A13B242E20D70010C37D /* NetworkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
+		B488C2F8D807FBB35379F461 /* ExchangeRatesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesService.swift; sourceTree = "<group>"; };
+		B488CAE9DE750219B2C18E83 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D87FEB342464829F005BAFB4 /* SwapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwapModel.xcdatamodel; sourceTree = "<group>"; };
+		D8CE5C3624766647005DA416 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +180,7 @@
 		50F4A12D242E20D70010C37D /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D8CE5C352476662D005DA416 /* Extensions */,
 				50F4A12E242E20D70010C37D /* Models */,
 				50F4A131242E20D70010C37D /* Remote */,
 			);
@@ -217,32 +208,34 @@
 		50F4A131242E20D70010C37D /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				50F4A132242E20D70010C37D /* Exchange Rates */,
-				50F4A135242E20D70010C37D /* Base */,
+				B488C3B1222623DBFF6A5F75 /* API */,
+				B488C39FD93CFB9440228155 /* Services */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		50F4A132242E20D70010C37D /* Exchange Rates */ = {
+		B488C39FD93CFB9440228155 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				50F4A133242E20D70010C37D /* ExchangeRatesNetwork.swift */,
-				50F4A134242E20D70010C37D /* ExchageRatesRoute.swift */,
+				B488C2F8D807FBB35379F461 /* ExchangeRatesService.swift */,
 			);
-			path = "Exchange Rates";
+			path = Services;
 			sourceTree = "<group>";
 		};
-		50F4A135242E20D70010C37D /* Base */ = {
+		B488C3B1222623DBFF6A5F75 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				50F4A136242E20D70010C37D /* NetworkRoute.swift */,
-				50F4A137242E20D70010C37D /* Environment.swift */,
-				50F4A138242E20D70010C37D /* Network.swift */,
-				50F4A139242E20D70010C37D /* Resource.swift */,
-				50F4A13A242E20D70010C37D /* Method.swift */,
-				50F4A13B242E20D70010C37D /* NetworkViewModel.swift */,
+				B488CAE9DE750219B2C18E83 /* ApiClient.swift */,
 			);
-			path = Base;
+			path = API;
+			sourceTree = "<group>";
+		};
+		D8CE5C352476662D005DA416 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE5C3624766647005DA416 /* DictionaryExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,30 +310,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C181552430C90D0078536E /* HomeViewModel.swift in Sources */,
-				50F4A141242E20D70010C37D /* Network.swift in Sources */,
 				50CEF1EF2429002C00DDCAC3 /* AppDelegate.swift in Sources */,
-				50F4A140242E20D70010C37D /* Environment.swift in Sources */,
 				50F4A13C242E20D70010C37D /* Rate.swift in Sources */,
 				50CEF2052429042100DDCAC3 /* HomeView.swift in Sources */,
 				506E36E1243B2A2000B2E616 /* Currency.swift in Sources */,
-				50F4A143242E20D70010C37D /* Method.swift in Sources */,
 				506E36DF243B21D100B2E616 /* CurrencySelectionView.swift in Sources */,
 				50179EF824310DAB004CC9F9 /* ExchangeDisplay.swift in Sources */,
 				50ED83F4242A2BA800878CB6 /* ViewConstants.swift in Sources */,
-				50F4A144242E20D70010C37D /* NetworkViewModel.swift in Sources */,
 				50CEF20B24290A9500DDCAC3 /* GridStack.swift in Sources */,
 				50E531B224337CE60052972A /* ExchangeDisplayDetail.swift in Sources */,
-				50F4A13F242E20D70010C37D /* NetworkRoute.swift in Sources */,
-				50F4A13D242E20D70010C37D /* ExchangeRatesNetwork.swift in Sources */,
+				D8CE5C3724766647005DA416 /* DictionaryExtensions.swift in Sources */,
 				50CEF1F12429002C00DDCAC3 /* SceneDelegate.swift in Sources */,
 				506E36E3243B31B300B2E616 /* CurrencySelectionRow.swift in Sources */,
 				507D61222437874A00729CE3 /* CurrencySwap.swift in Sources */,
-				50F4A13E242E20D70010C37D /* ExchageRatesRoute.swift in Sources */,
 				506E36E8243E08CD00B2E616 /* Exchange.swift in Sources */,
 				D87FEB352464829F005BAFB4 /* SwapModel.xcdatamodeld in Sources */,
 				50CEF209242907F300DDCAC3 /* Keypad.swift in Sources */,
 				50CEF1F32429002C00DDCAC3 /* ContentView.swift in Sources */,
-				50F4A142242E20D70010C37D /* Resource.swift in Sources */,
+				B488C6BEA2352029D155594B /* ApiClient.swift in Sources */,
+				B488C0F2746FEE8505269DA4 /* ExchangeRatesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

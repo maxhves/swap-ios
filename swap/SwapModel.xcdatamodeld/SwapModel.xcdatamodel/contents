@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LocalCurrencyValue" representedClassName="LocalCurrencyValue" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <relationship name="rate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocalRate" inverseName="rates" inverseEntity="LocalRate"/>
+    </entity>
     <entity name="LocalRate" representedClassName="LocalRate" syncable="YES" codeGenerationType="class">
         <attribute name="base" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="rates" optional="YES" attributeType="String"/>
+        <relationship name="rates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocalCurrencyValue" inverseName="rate" inverseEntity="LocalCurrencyValue"/>
     </entity>
     <elements>
         <element name="LocalRate" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="LocalCurrencyValue" positionX="249.07421875" positionY="255.8515625" width="128" height="103"/>
     </elements>
 </model>
