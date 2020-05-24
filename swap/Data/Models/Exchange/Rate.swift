@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Rate: Codable {
+struct Rate: Codable, Hashable {
 
-    let base: String
-    let date: String
-    let rates: [String: Decimal]
-    
+    var base: String
+    var date: String
+    var rates: [String: Decimal]
+
 }

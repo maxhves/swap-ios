@@ -11,27 +11,32 @@ import Combine
 
 class HomeViewModel: ObservableObject {
 
-    var cancellationToken: AnyCancellable?
+    var cancellationToken: Set<AnyCancellable?> = []
 
     init() {
-        getLatestRate()
+        fetchAndStoreCurrencyRates()
     }
 
 }
 
 extension HomeViewModel {
 
-    private func getLatestRate() {
-        cancellationToken = ExchangeRatesService.request(.latest)
-            .mapError({ (error) -> Error in
-                print(error)
-                return error
-            })
-            .sink(receiveCompletion: { _ in },
-                receiveValue: { rate in
-                    let test = rate
-                    print("Returned rate: \(rate)")
+    private func fetchAndStoreCurrencyRates() {
+        Currency.currencies.forEach { currency in
+            getLatestRateForBase(base: currency.name)
+        }
+    }
+
+    private func getLatestRateForBase(base: String) {
+        cancellationToken.insert(ExchangeRatesService.request(.latest, parameters: ["base": base])
+                .mapError({ (error) -> Error in
+                    print(error)
+                    return error
                 })
+                .sink(receiveCompletion: { _ in },
+                        receiveValue: { rate in
+                            print("Returned rate: \(rate)")
+                        }))
     }
 
 }

@@ -17,10 +17,16 @@ enum ApiPath: String {
 
 extension ExchangeRatesService {
 
-    static func request(_ path: ApiPath) -> AnyPublisher<Rate, Error> {
+    static func request(_ path: ApiPath, parameters: [String: String]? = nil) -> AnyPublisher<Rate, Error> {
 
-        guard let components = URLComponents(url: baseUrl.appendingPathComponent(path.rawValue), resolvingAgainstBaseURL: true)
+        guard var components = URLComponents(url: baseUrl.appendingPathComponent(path.rawValue), resolvingAgainstBaseURL: true)
                 else { fatalError("Couldn't create URLComponents") }
+
+        if let parameters = parameters {
+            components.queryItems = parameters.map { key, value -> URLQueryItem in
+                return URLQueryItem(name: key, value: value)
+            }
+        }
 
         let request = URLRequest(url: components.url!)
 
