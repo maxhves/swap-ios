@@ -25,8 +25,8 @@ extension Color {
 }
 
 struct ContentView: View {
-    
-    @SwiftUI.Environment(\.managedObjectContext) var managedObjectContext
+
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     var body: some View {
         
@@ -34,6 +34,7 @@ struct ContentView: View {
             
             // Home View 
             HomeView()
+                    .environment(\.managedObjectContext, managedObjectContext)
             
         }
         

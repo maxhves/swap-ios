@@ -13,6 +13,9 @@ struct Exchange {
     
     var primary: Currency
     var secondary: Currency
+
+    var test: Int = 0
+    var testRate: Rate? = nil
     
     var currentValue: Decimal = 0.0 {
         didSet {

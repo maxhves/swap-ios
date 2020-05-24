@@ -8,10 +8,13 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class HomeViewModel: ObservableObject {
 
     var cancellationToken: Set<AnyCancellable?> = []
+    var fetchedRates: Set<Rate> = []
+    @Published var ratesFetched: Bool = false
 
     init() {
         fetchAndStoreCurrencyRates()
@@ -35,7 +38,12 @@ extension HomeViewModel {
                 })
                 .sink(receiveCompletion: { _ in },
                         receiveValue: { rate in
+                            self.fetchedRates.insert(rate)
                             print("Returned rate: \(rate)")
+
+                            if self.fetchedRates.count >= Currency.currencies.count {
+                                self.ratesFetched = true
+                            }
                         }))
     }
 
