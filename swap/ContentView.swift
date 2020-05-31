@@ -19,6 +19,7 @@ extension Color {
     static let keypadKey = Color("keypadKey")
     
     static let swapButton = Color("swapButton")
+    static let swapButtonSecondary = Color("swapButtonSecondary")
     static let swapPrimary = Color("swapPrimary")
     static let swapSecondary = Color("swapSecondary")
     

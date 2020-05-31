@@ -33,7 +33,7 @@ struct CurrencySwap: View {
                         weight: .semibold,
                         design: .rounded)
                     )
-                    .foregroundColor(Color.textSecondary)
+                    .foregroundColor(.white)
                     .frame(width: ViewConstants.swapButtonWidth, height: ViewConstants.swapButtonHeight)
             }
             .background(Color.swapPrimary)
@@ -52,14 +52,18 @@ struct CurrencySwap: View {
                     }
                 })
             }) {
-                Image(systemName: "arrow.right.arrow.left.circle")
+                Image(systemName: "arrow.right.arrow.left")
                     .resizable()
                     .frame(width: ViewConstants.swapIconSize, height: ViewConstants.swapIconSize)
-                    .foregroundColor(Color.textSecondary)
+                    .foregroundColor(Color.swapButtonSecondary)
             }
             .frame(width: ViewConstants.swapButtonHeight, height: ViewConstants.swapButtonHeight)
             .background(Color.swapButton)
             .cornerRadius(ViewConstants.large)
+            .overlay(
+                RoundedRectangle(cornerRadius: ViewConstants.large)
+                    .stroke(Color.swapButtonSecondary, lineWidth: ViewConstants.swapButtonBorderWidth)
+            )
             .zIndex(1.0)
             
             // Secondary
@@ -73,7 +77,7 @@ struct CurrencySwap: View {
                         weight: .semibold,
                         design: .rounded)
                     )
-                    .foregroundColor(Color.textSecondary)
+                    .foregroundColor(.white)
                     .frame(width: ViewConstants.swapButtonWidth, height: ViewConstants.swapButtonHeight)
             }
             .background(Color.swapSecondary)
