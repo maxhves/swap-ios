@@ -52,9 +52,8 @@ struct CurrencySwap: View {
                     }
                 })
             }) {
-                Image(systemName: "arrow.right.arrow.left")
-                    .resizable()
-                    .frame(width: ViewConstants.swapIconSize, height: ViewConstants.swapIconSize)
+                Image(systemName: "arrow.2.circlepath")
+                    .font(.system(size: ViewConstants.swapIconSize, weight: .black))
                     .foregroundColor(Color.swapButtonSecondary)
             }
             .frame(width: ViewConstants.swapButtonHeight, height: ViewConstants.swapButtonHeight)
