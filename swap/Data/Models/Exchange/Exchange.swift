@@ -14,8 +14,8 @@ struct Exchange {
     var primary: Currency
     var secondary: Currency
 
-    var test: Int = 0
-    var testRate: Rate? = nil
+    var primaryRate: Rate? = nil
+    var secondaryRate: Rate? = nil
     
     var currentValue: Decimal = 0.0 {
         didSet {
@@ -43,11 +43,22 @@ struct Exchange {
             }
             
             let primaryValue = Decimal(string: primaryValueDisplay)
-            secondaryValueDisplay = "\((primaryValue ?? 0) * 2)"
+            secondaryValueDisplay = "\((primaryValue ?? 0) * conversionRate())"
         }
     }
     
     var primaryValueDisplay: String = "0"
     var secondaryValueDisplay: String = "0"
     
+}
+
+extension Exchange {
+
+    // MARK: Transformations
+    private func conversionRate() -> Decimal {
+        let rate = primaryRate?.rates.first { rate in rate.key == secondary.name }
+        if let rate = rate { return rate.value }
+        return 0.0
+    }
+
 }

@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var model: HomeViewModel = HomeViewModel()
     @Environment(\.managedObjectContext) var managedObjectContext
+    @ObservedObject var model: HomeViewModel = HomeViewModel()
 
     @State private var showCurrencySelection: Bool = false
     @State private var exchange: Exchange = Exchange(
@@ -19,7 +19,8 @@ struct HomeView: View {
     )
     @State private var selection: String = "primary"
 
-    @FetchRequest(entity: LocalRate.entity(), sortDescriptors: []) var rates: FetchedResults<LocalRate>
+    @FetchRequest(entity: ManagedRate.entity(), sortDescriptors: []) var managedRates: FetchedResults<ManagedRate>
+    @FetchRequest(entity: ManagedCurrencyRate.entity(), sortDescriptors: []) var managedCurrencyRates: FetchedResults<ManagedCurrencyRate>
 
     var body: some View {
 
@@ -30,18 +31,16 @@ struct HomeView: View {
                 // Exchange Display
                 ExchangeDisplay(exchange: self.$exchange)
 
-                // Test Fetch Results
+                // On Results Fetched
                 if self.model.ratesFetched {
-                    Text("Fetched them boss")
-                            .padding()
-                            .foregroundColor(.blue)
-                            .onAppear {
-                                print("Current count: \(self.rates.count)")
+                    Text("")
+                        .frame(width: 0, height: 0)
+                        .onAppear {
+                            DispatchQueue.main.async {
                                 self.clearExistingRates()
-                                print("After deletion count: \(self.rates.count)")
                                 self.storeRatesLocally()
-                                print("After storing count: \(self.rates.count)")
                             }
+                        }
                 }
 
                 // Currency Swap
@@ -56,11 +55,10 @@ struct HomeView: View {
                             exchange: self.$exchange,
                             selection: self.$selection)
                             .onDisappear {
-                                print("Before \(self.exchange.testRate)")
-                                self.exchange.testRate = self.rates.first { rate in
-                                   rate.base == self.exchange.primary.name
-                                }.map { localRate in Rate(base: localRate.base ?? "", date: "", rates: ["": 0.0])}
-                                print("After \(self.exchange.testRate)")
+                                DispatchQueue.main.async {
+                                    self.updatePrimaryExchangeRate()
+                                    self.updateSecondaryExchangeRate()
+                                }
                             }
                     }
 
@@ -83,29 +81,65 @@ struct HomeView: View {
 
     }
 
+}
+
+extension HomeView {
+
     private func clearExistingRates() {
-        rates.forEach { rate in
+        managedRates.forEach { rate in
             managedObjectContext.delete(rate)
         }
 
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
+        do { try managedObjectContext.save() } catch { print(error.localizedDescription) }
     }
 
     private func storeRatesLocally() {
         model.fetchedRates.forEach { rate in
-            let localRate = LocalRate(context: managedObjectContext)
-            localRate.id = rate.id
-            localRate.base = rate.base
+            let managedRate = ManagedRate(context: managedObjectContext)
+            managedRate.id = rate.id
+            managedRate.base = rate.base
 
-            do {
-                try managedObjectContext.save()
-            } catch {
-                print(error.localizedDescription)
+            rate.rates.forEach { key, value in
+                let managedCurrencyRate = ManagedCurrencyRate(context: managedObjectContext)
+                managedCurrencyRate.ofRate = managedRate
+                managedCurrencyRate.name = key
+                managedCurrencyRate.value = NSDecimalNumber(decimal: value)
+                managedCurrencyRate.rateId = rate.id
             }
+
+            do { try self.managedObjectContext.save() } catch { print(error.localizedDescription) }
+        }
+    }
+
+}
+
+extension HomeView {
+
+    private func updatePrimaryExchangeRate() {
+        let pmr = self.managedRates.first { r in r.base == exchange.primary.name }
+        if let pmr = pmr {
+            let pmrRates = self.managedCurrencyRates.filter { cr in cr.rateId == pmr.id }
+            exchange.primaryRate = Rate(
+                base: pmr.base ?? "",
+                date: "",
+                rates: Dictionary(
+                    uniqueKeysWithValues: pmrRates.map { ($0.name ?? "", Decimal(Double(truncating: $0.value ?? 0.0))) }
+                )
+            )
+        }
+    }
+
+    private func updateSecondaryExchangeRate() {
+        let smr = self.managedRates.first { r in r.base == exchange.secondary.name }
+        if let smr = smr {
+            let smrRates = self.managedCurrencyRates.filter { cr in cr.rateId == smr.id }
+            exchange.secondaryRate = Rate(
+                    base: smr.base ?? "",
+                    date: "",
+                    rates: Dictionary(
+                            uniqueKeysWithValues: smrRates.map { ($0.name ?? "", Decimal(Double(truncating: $0.value ?? 0.0))) }
+                    )
+            )
         }
     }
 

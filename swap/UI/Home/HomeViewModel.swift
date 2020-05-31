@@ -17,14 +17,14 @@ class HomeViewModel: ObservableObject {
     @Published var ratesFetched: Bool = false
 
     init() {
-        fetchAndStoreCurrencyRates()
+        fetchCurrencyRates()
     }
 
 }
 
 extension HomeViewModel {
 
-    private func fetchAndStoreCurrencyRates() {
+    private func fetchCurrencyRates() {
         Currency.currencies.forEach { currency in
             getLatestRateForBase(base: currency.name)
         }
