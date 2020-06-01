@@ -14,8 +14,8 @@ class HomeViewModel: ObservableObject {
 
     var cancellationToken: Set<AnyCancellable?> = []
     var fetchedRates: Set<Rate> = []
-    @Published var error: Error? = nil
-    @Published var ratesFetched: Bool = false
+    @Published private(set) var error: Error? = nil
+    @Published private(set) var ratesFetched: Bool = false
 
     init() {
         fetchCurrencyRates()
