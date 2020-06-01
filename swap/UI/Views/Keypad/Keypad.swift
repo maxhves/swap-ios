@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Keypad: View {
     
-    let keys: [String] = ["7", "8", "9", "4", "5", "6", "1", "2", "3", ".", "0", "-"]
+    private let keys: [String] = ["7", "8", "9", "4", "5", "6", "1", "2", "3", ".", "0", "-"]
     
     @Binding var exchange: Exchange
     
@@ -29,6 +29,12 @@ struct Keypad: View {
                                 width: geometry.size.width / 3,
                                 height: (geometry.size.height - ViewConstants.keypadPadding) / 4
                             )
+                            .onTapGesture {
+                                self.handleKeyPressed(row * ViewConstants.keypadColumns + column)
+                            }
+                            .onLongPressGesture {
+                                self.clearExchange()
+                            }
                     } else {
                         Text("\(self.keys[row * ViewConstants.keypadColumns + column])")
                             .font(.system(
@@ -48,15 +54,16 @@ struct Keypad: View {
         
     }
     
-    /**
-     Handle when a keypad key is selected by changing the key state
-     - Parameters:
-        - keyIndex: the index of the pressed key
-     */
+}
+
+extension Keypad {
+
     private func handleKeyPressed(_ keyIndex: Int) {
         exchange.currentValue = keyIndexAsInt(keyIndex)
     }
-    
+
+    private func clearExchange() { exchange.clear() }
+
     private func keyIndexAsInt(_ index: Int) -> Decimal {
         switch index {
         case 0:
@@ -87,7 +94,7 @@ struct Keypad: View {
             return 0
         }
     }
-    
+
 }
 
 struct Keypad_Previews: PreviewProvider {

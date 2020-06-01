@@ -10,7 +10,12 @@ import Foundation
 
 
 struct Exchange {
-    
+
+    // MARK: Static constants
+    private static let primaryEmpty: String = "0"
+    private static let secondaryEmpty: String = "0.00"
+
+    // MARK: Properties
     var primary: Currency
     var secondary: Currency
 
@@ -51,8 +56,8 @@ struct Exchange {
         }
     }
     
-    var primaryValueDisplay: String = "0"
-    var secondaryValueDisplay: String = "0"
+    var primaryValueDisplay: String = Exchange.primaryEmpty
+    var secondaryValueDisplay: String = Exchange.secondaryEmpty
     
 }
 
@@ -64,6 +69,11 @@ extension Exchange {
             return 0.0
         }
         return result
+    }
+
+    mutating func clear() {
+        primaryValueDisplay = Exchange.primaryEmpty
+        secondaryValueDisplay = Exchange.secondaryEmpty
     }
 
 }
