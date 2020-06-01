@@ -1,7 +1,7 @@
 <p align="center">
    <img 
-       src="https://raw.githubusercontent.com/MaxHvesser/swap-android/master/images/swap_logo.png"
-       height="100">
+       src="https://github.com/MaxHvesser/swap-ios/blob/master/swap/Assets.xcassets/AppIcon.appiconset/icon_83.5%402x.png"
+       height="120">
    <br/>
 </p>
 
