@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
 
     var cancellationToken: Set<AnyCancellable?> = []
     var fetchedRates: Set<Rate> = []
+    @Published var error: Error? = nil
     @Published var ratesFetched: Bool = false
 
     init() {
@@ -33,7 +34,7 @@ extension HomeViewModel {
     private func getLatestRateForBase(base: String) {
         cancellationToken.insert(ExchangeRatesService.request(.latest, parameters: ["base": base])
                 .mapError({ (error) -> Error in
-                    print(error)
+                    self.error = error
                     return error
                 })
                 .sink(receiveCompletion: { _ in },

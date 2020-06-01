@@ -28,9 +28,11 @@ extension ExchangeRatesService {
             }
         }
 
-        let request = URLRequest(url: components.url!)
+        guard let url = components.url else {
+            fatalError("Couldn't create URL")
+        }
 
-        return apiClient.run(request)
+        return apiClient.run(URLRequest(url: url))
             .map(\.value)
             .eraseToAnyPublisher()
 
