@@ -39,6 +39,7 @@ struct HomeView: View {
                             DispatchQueue.main.async {
                                 self.clearExistingRates()
                                 self.storeRatesLocally()
+                                self.updateExchanges()
                             }
                         }
                 }
@@ -56,8 +57,7 @@ struct HomeView: View {
                             selection: self.$selection)
                             .onDisappear {
                                 DispatchQueue.main.async {
-                                    self.updatePrimaryExchangeRate()
-                                    self.updateSecondaryExchangeRate()
+                                    self.updateExchanges()
                                 }
                             }
                     }
@@ -122,6 +122,11 @@ extension HomeView {
 }
 
 extension HomeView {
+
+    private func updateExchanges() {
+        updatePrimaryExchangeRate()
+        updateSecondaryExchangeRate()
+    }
 
     private func updatePrimaryExchangeRate() {
         guard let pmr = (self.managedRates.first { r in r.base == exchange.primary.name}) else {
