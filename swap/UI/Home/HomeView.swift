@@ -90,7 +90,11 @@ extension HomeView {
             managedObjectContext.delete(rate)
         }
 
-        do { try managedObjectContext.save() } catch { print(error.localizedDescription) }
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     private func storeRatesLocally() {
@@ -107,7 +111,11 @@ extension HomeView {
                 managedCurrencyRate.rateId = rate.id
             }
 
-            do { try self.managedObjectContext.save() } catch { print(error.localizedDescription) }
+            do {
+                try self.managedObjectContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 
@@ -116,31 +124,19 @@ extension HomeView {
 extension HomeView {
 
     private func updatePrimaryExchangeRate() {
-        let pmr = self.managedRates.first { r in r.base == exchange.primary.name }
-        if let pmr = pmr {
-            let pmrRates = self.managedCurrencyRates.filter { cr in cr.rateId == pmr.id }
-            exchange.primaryRate = Rate(
-                base: pmr.base ?? "",
-                date: "",
-                rates: Dictionary(
-                    uniqueKeysWithValues: pmrRates.map { ($0.name ?? "", Decimal(Double(truncating: $0.value ?? 0.0))) }
-                )
-            )
+        guard let pmr = (self.managedRates.first { r in r.base == exchange.primary.name}) else {
+            return
         }
+        let pmrRates = self.managedCurrencyRates.filter { cr in cr.rateId == pmr.id }
+        exchange.primaryRate = Rate.managedRateAsRate(rate: pmr, currencyRates: pmrRates)
     }
 
     private func updateSecondaryExchangeRate() {
-        let smr = self.managedRates.first { r in r.base == exchange.secondary.name }
-        if let smr = smr {
-            let smrRates = self.managedCurrencyRates.filter { cr in cr.rateId == smr.id }
-            exchange.secondaryRate = Rate(
-                    base: smr.base ?? "",
-                    date: "",
-                    rates: Dictionary(
-                            uniqueKeysWithValues: smrRates.map { ($0.name ?? "", Decimal(Double(truncating: $0.value ?? 0.0))) }
-                    )
-            )
+        guard let smr = (self.managedRates.first { r in r.base == exchange.secondary.name}) else {
+            return
         }
+        let smrRates = self.managedCurrencyRates.filter { cr in cr.rateId == smr.id }
+        exchange.secondaryRate = Rate.managedRateAsRate(rate: smr, currencyRates: smrRates)
     }
 
 }
