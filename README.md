@@ -1,6 +1,6 @@
 <p align="center">
    <img 
-       src="https://github.com/MaxHvesser/swap-ios/blob/master/swap/Assets.xcassets/AppIcon.appiconset/icon_83.5%402x.png"
+       src="https://github.com/MaxHvesser/swap-ios/blob/master/swap/Assets.xcassets/AppIcon.appiconset/Icon.png"
        height="120">
    <br/>
 </p>
