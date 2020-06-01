@@ -43,7 +43,11 @@ struct Exchange {
             }
             
             let primaryValue = Decimal(string: primaryValueDisplay)
-            secondaryValueDisplay = "\((primaryValue ?? 0) * conversionRate())"
+
+            let finalValue = ((primaryValue ?? 0) * conversionRate())
+            let finalValueDouble = Double(exactly: finalValue as NSDecimalNumber) ?? 0.0
+
+            secondaryValueDisplay = String(format: "%.2f", finalValueDouble)
         }
     }
     
@@ -56,9 +60,10 @@ extension Exchange {
 
     // MARK: Transformations
     private func conversionRate() -> Decimal {
-        let rate = primaryRate?.rates.first { rate in rate.key == secondary.name }
-        if let rate = rate { return rate.value }
-        return 0.0
+        guard let result = (primaryRate?.rates.first { rate in rate.key == secondary.name }?.value) else {
+            return 0.0
+        }
+        return result
     }
 
 }
