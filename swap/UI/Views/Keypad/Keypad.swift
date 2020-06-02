@@ -62,7 +62,14 @@ extension Keypad {
         exchange.currentValue = keyIndexAsInt(keyIndex)
     }
 
-    private func clearExchange() { exchange.clear() }
+    private func clearExchange() {
+        exchange.clear()
+        warningHaptic()
+    }
+
+    func warningHaptic() {
+        UINotificationFeedbackGenerator().notificationOccurred(.warning)
+    }
 
     private func keyIndexAsInt(_ index: Int) -> Decimal {
         switch index {
