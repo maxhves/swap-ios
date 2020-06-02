@@ -12,7 +12,7 @@ enum ExchangeRatesService {
 }
 
 enum ApiPath: String {
-    case latest = "/latest---"
+    case latest = "/latest"
 }
 
 extension ExchangeRatesService {

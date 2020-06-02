@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  swap
+
+  Created by Maximilian Hvesser-Lewis on 02/06/2020.
+  Copyright © 2020 Hvesser. All rights reserved.
+*/
+
+"ErrorNetTitle" = "Er ging iets mis";
+"ErrorNetBody" = "Koersdata kon niet worden gedownload. Controleer je internetverbinding en probeer het later opnieuw";
+"ErrorBack" = "Terug";
+"ErrorRetry" = "Probeer opnieuw";
+
+"SelectCurrency" = "Kies valuta";
+
+"Africa" = "Afrika";
+"Asia" = "Azië";
+"Australia" = "Australië";
+"Europe" = "Europa";
+"NorthAmerica" = "Noord-Amerika";
+"SouthAmerica" = "Zuid-Amerika";
+
+"SouthAfricanRand" = "Zuid-Afrikaanse Rand";
+"ChineseYuan" = "Chinese Yuan";
+"HongKongDollars" = "Hong Kong Dollar";
+"IndonesianRupiajh" = "Indonesische roepia";
+"IsraeliNewShekel" = "Israëlische sjekel";
+"IndianRupee" = "Indiase roepie";
+"JapaneseYen" = "Japanse yen";
+"SouthKoreanWon" = "Zuid-Koreaanse won";
+"MalaysianRinggit" = "Maleisische ringgit";
+"PhilippinePeso" = "Filipijnse peso";
+"SingaporeDollar" = "Singaporese dollar";
+"ThaiBaht" = "Thaise baht";
+"TurkishLira" = "Turkse lira";
+"AustralianDollars" = "Australische dollar";
+"NewZealandDollars" = "Nieuw-Zeelandse dollar";
+"BulgarianLev" = "Bulgaarse lev";
+"SwissFrancs" = "Zwitserse frank";
+"CzechKoruna" = "Tsjechische kroon";
+"DanishKroner" = "Deense kroon";
+"Euros" = "Euro";
+"GreatBritishPounds" = "Pond sterling";
+"CroatianKuna" = "Kroatische kuna";
+"HungarianForint" = "Hongaarse forint";
+"IcelandicKroner" = "IJslandse kroon";
+"NorwegianKroner" = "Noorse kroon";
+"PolishZloty" = "Poolse złoty";
+"RomanianLeu" = "Roemeense leu";
+"RussianRuble" = "Russische roebel";
+"SwedishKroner" = "Zweedse kroon";
+"CanadianDollars" = "Canadese dollar";
+"UnitedStatesDollars" = "Amerikaanse dollar";
+"BrazilianReal" = "Braziliaanse real";
+"MexicanPeso" = "Mexicaanse peso";

@@ -15,8 +15,8 @@ struct HomeView: View {
     @State private var showCurrencySelection: Bool = false
     @State private var showErrorAlert: Bool = false
     @State private var exchange: Exchange = Exchange(
-        primary: Currency(name: "NOK", fullName: "Norwegian Kroners", continent: .Europe),
-        secondary: Currency(name: "USD", fullName: "United States Dollars", continent: .NorthAmerica)
+        primary: Currency(name: "NOK", fullName: "NorwegianKroner".localized(), continent: .Europe),
+        secondary: Currency(name: "USD", fullName: "UnitedStatesDollars".localized(), continent: .NorthAmerica)
     )
     @State private var selection: String = "primary"
 
@@ -54,13 +54,13 @@ struct HomeView: View {
                         }
                         .alert(isPresented: self.$showErrorAlert) {
                             Alert(
-                                title: Text("Something went wrong"), 
-                                message: Text("Failed to download latest currency rates. Please check your internet connection"),
-                                primaryButton: .default(Text("Retry")) {
+                                title: Text("ErrorNetTitle"), 
+                                message: Text("ErrorNetBody"),
+                                primaryButton: .default(Text("ErrorRetry")) {
                                     self.showErrorAlert = false
                                     self.model.reFetchCurrencyRates()
                                 },
-                                secondaryButton: .cancel()
+                                secondaryButton: .cancel(Text("ErrorBack"))
                             )
                         }
                 }

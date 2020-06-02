@@ -50,7 +50,7 @@ struct CurrencySelectionView: View {
                 .environment(\.horizontalSizeClass, .regular)
                 
             }
-            .navigationBarTitle(Text("Select Currency"))
+            .navigationBarTitle(Text("SelectCurrency"))
             
         }
         

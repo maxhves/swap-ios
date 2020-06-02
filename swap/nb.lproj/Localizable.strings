@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  swap
+
+  Created by Maximilian Hvesser-Lewis on 02/06/2020.
+  Copyright © 2020 Hvesser. All rights reserved.
+*/
+
+"ErrorNetTitle" = "Noe gikk galt";
+"ErrorNetBody" = "Kunne ikke laste ned de nyeste valutakursene. Vennligst sjekk internettforbindelsen din";
+"ErrorBack" = "Tilbake";
+"ErrorRetry" = "Prøv igjen";
+
+"SelectCurrency" = "Velg valuta";
+
+"Africa" = "Afrika";
+"Asia" = "Asia";
+"Australia" = "Australia";
+"Europe" = "Europa";
+"NorthAmerica" = "Nord Amerika";
+"SouthAmerica" = "Sør Amerika";
+
+"SouthAfricanRand" = "Sørafrikanske rand";
+"ChineseYuan" = "Kinesiske yuan";
+"HongKongDollars" = "Hong Kong dollar";
+"IndonesianRupiajh" = "Indonesiske rupiajh";
+"IsraeliNewShekel" = "Ny israelsk shekel";
+"IndianRupee" = "Indiske rupee";
+"JapaneseYen" = "Japanske yen";
+"SouthKoreanWon" = "Sørkoreanske won";
+"MalaysianRinggit" = "Malaysiske ringgit";
+"PhilippinePeso" = "Filippinske peso";
+"SingaporeDollar" = "Singapore dollar";
+"ThaiBaht" = "Thailandske baht";
+"TurkishLira" = "Tyrkiske lira";
+"AustralianDollars" = "Australske dollar";
+"NewZealandDollars" = "New Zealand dollar";
+"BulgarianLev" = "Bulgarske lev";
+"SwissFrancs" = "Sveitsiske franc";
+"CzechKoruna" = "Tjekkiske koruna";
+"DanishKroner" = "Danske kroner";
+"Euros" = "Euro";
+"GreatBritishPounds" = "Britiske pund";
+"CroatianKuna" = "Kroatiske kuna";
+"HungarianForint" = "Ungarske forinter";
+"IcelandicKroner" = "Islandske kroner";
+"NorwegianKroner" = "Norske kroner";
+"PolishZloty" = "Polske zloty";
+"RomanianLeu" = "Ny rumenske leu";
+"RussianRuble" = "Russiske rubler";
+"SwedishKroner" = "Svenske kroner";
+"CanadianDollars" = "Kanadiske dollar";
+"UnitedStatesDollars" = "Amerikanske dollar";
+"BrazilianReal" = "Brasilianske real";
+"MexicanPeso" = "Meksikanske peso";

@@ -36,32 +36,32 @@ struct Currency: Identifiable {
 
     static let currencySections: [CurrencySection] = [
         CurrencySection(
-                title: "Africa",
+                title: "Africa".localized(),
                 currencies: currencies.filter({ currency in
                     currency.continent == .Africa
                 })),
         CurrencySection(
-                title: "Asia",
+                title: "Asia".localized(),
                 currencies: currencies.filter({ currency in
                     currency.continent == .Asia
                 })),
         CurrencySection(
-                title: "Australia",
+                title: "Australia".localized(),
                 currencies: currencies.filter({ currency in
                     currency.continent == .Australia
                 })),
         CurrencySection(
-                title: "Europe",
+                title: "Europe".localized(),
                 currencies: currencies.filter({ currency in
                     currency.continent == .Europe
                 })),
         CurrencySection(
-                title: "North America",
+                title: "NorthAmerica".localized(),
                 currencies: currencies.filter({ currency in
                     currency.continent == .NorthAmerica
                 })),
         CurrencySection(
-                title: "South America",
+                title: "SouthAmerica".localized(),
                 currencies: currencies.filter({ currency in
                     currency.continent == .SouthAmerica
                 }))
@@ -69,39 +69,39 @@ struct Currency: Identifiable {
 
     // MARK: Full currency array
     static let currencies: Array<Currency> = [
-        Currency(name: "ZAR", fullName: "South African Rand", continent: .Africa),
-        Currency(name: "CNY", fullName: "Chinese Yuan", continent: .Asia),
-        Currency(name: "HKD", fullName: "Hong Kong Dollars", continent: .Asia),
-        Currency(name: "IDR", fullName: "Indonesian Rupiajh", continent: .Asia),
-        Currency(name: "ILS", fullName: "Israeli New Shekel", continent: .Asia),
-        Currency(name: "INR", fullName: "Indian Rupee", continent: .Asia),
-        Currency(name: "JPY", fullName: "Japanese Yen", continent: .Asia),
-        Currency(name: "KRW", fullName: "South Korean Won", continent: .Asia),
-        Currency(name: "MYR", fullName: "Malaysian Ringgit", continent: .Asia),
-        Currency(name: "PHP", fullName: "Philippine Peso", continent: .Asia),
-        Currency(name: "SGD", fullName: "Singapore Dollar", continent: .Asia),
-        Currency(name: "THB", fullName: "Thai Baht", continent: .Asia),
-        Currency(name: "TRY", fullName: "Turkish Lira", continent: .Asia),
-        Currency(name: "AUD", fullName: "Australian Dollars", continent: .Australia),
-        Currency(name: "NZD", fullName: "New Zealand Dollars", continent: .Australia),
-        Currency(name: "BGN", fullName: "Bulgarian Lev", continent: .Europe),
-        Currency(name: "CHF", fullName: "Swiss Francs", continent: .Europe),
-        Currency(name: "CZK", fullName: "Czech Koruna", continent: .Europe),
-        Currency(name: "DKK", fullName: "Danish Kroner", continent: .Europe),
-        Currency(name: "EUR", fullName: "Euros", continent: .Europe),
-        Currency(name: "GBP", fullName: "Great British Pounds", continent: .Europe),
-        Currency(name: "HRK", fullName: "Croatian Kuna", continent: .Europe),
-        Currency(name: "HUF", fullName: "Hungarian Forint", continent: .Europe),
-        Currency(name: "ISK", fullName: "Icelandic Kroner", continent: .Europe),
-        Currency(name: "NOK", fullName: "Norwegian Kroner", continent: .Europe),
-        Currency(name: "PLN", fullName: "Poland Zloty", continent: .Europe),
-        Currency(name: "RON", fullName: "Romanian Leu", continent: .Europe),
-        Currency(name: "RUB", fullName: "Russian Ruble", continent: .Europe),
-        Currency(name: "SEK", fullName: "Swedish Kroner", continent: .Europe),
-        Currency(name: "CAD", fullName: "Canadian Dollars", continent: .NorthAmerica),
-        Currency(name: "USD", fullName: "United States Dollars", continent: .NorthAmerica),
-        Currency(name: "BRL", fullName: "Brazilian Real", continent: .SouthAmerica),
-        Currency(name: "MXN", fullName: "Mexican Peso", continent: .SouthAmerica)
+        Currency(name: "ZAR", fullName: "SouthAfricanRand".localized(), continent: .Africa),
+        Currency(name: "CNY", fullName: "ChineseYuan".localized(), continent: .Asia),
+        Currency(name: "HKD", fullName: "HongKongDollars".localized(), continent: .Asia),
+        Currency(name: "IDR", fullName: "IndonesianRupiajh".localized(), continent: .Asia),
+        Currency(name: "ILS", fullName: "IsraeliNewShekel".localized(), continent: .Asia),
+        Currency(name: "INR", fullName: "IndianRupee".localized(), continent: .Asia),
+        Currency(name: "JPY", fullName: "JapaneseYen".localized(), continent: .Asia),
+        Currency(name: "KRW", fullName: "SouthKoreanWon".localized(), continent: .Asia),
+        Currency(name: "MYR", fullName: "MalaysianRinggit".localized(), continent: .Asia),
+        Currency(name: "PHP", fullName: "PhilippinePeso".localized(), continent: .Asia),
+        Currency(name: "SGD", fullName: "SingaporeDollar".localized(), continent: .Asia),
+        Currency(name: "THB", fullName: "ThaiBaht".localized(), continent: .Asia),
+        Currency(name: "TRY", fullName: "TurkishLira".localized(), continent: .Asia),
+        Currency(name: "AUD", fullName: "AustralianDollars".localized(), continent: .Australia),
+        Currency(name: "NZD", fullName: "NewZealandDollars".localized(), continent: .Australia),
+        Currency(name: "BGN", fullName: "BulgarianLev".localized(), continent: .Europe),
+        Currency(name: "CHF", fullName: "SwissFrancs".localized(), continent: .Europe),
+        Currency(name: "CZK", fullName: "CzechKoruna".localized(), continent: .Europe),
+        Currency(name: "DKK", fullName: "DanishKroner".localized(), continent: .Europe),
+        Currency(name: "EUR", fullName: "Euros".localized(), continent: .Europe),
+        Currency(name: "GBP", fullName: "GreatBritishPounds".localized(), continent: .Europe),
+        Currency(name: "HRK", fullName: "CroatianKuna".localized(), continent: .Europe),
+        Currency(name: "HUF", fullName: "HungarianForint".localized(), continent: .Europe),
+        Currency(name: "ISK", fullName: "IcelandicKroner".localized(), continent: .Europe),
+        Currency(name: "NOK", fullName: "NorwegianKroner".localized(), continent: .Europe),
+        Currency(name: "PLN", fullName: "PolishZloty".localized(), continent: .Europe),
+        Currency(name: "RON", fullName: "RomanianLeu".localized(), continent: .Europe),
+        Currency(name: "RUB", fullName: "RussianRuble".localized(), continent: .Europe),
+        Currency(name: "SEK", fullName: "SwedishKroner".localized(), continent: .Europe),
+        Currency(name: "CAD", fullName: "CanadianDollars".localized(), continent: .NorthAmerica),
+        Currency(name: "USD", fullName: "UnitedStatesDollars".localized(), continent: .NorthAmerica),
+        Currency(name: "BRL", fullName: "BrazilianReal".localized(), continent: .SouthAmerica),
+        Currency(name: "MXN", fullName: "MexicanPeso".localized(), continent: .SouthAmerica)
     ]
 
 }
