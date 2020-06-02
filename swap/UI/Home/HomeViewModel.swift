@@ -25,6 +25,12 @@ class HomeViewModel: ObservableObject {
 
 extension HomeViewModel {
 
+    func reFetchCurrencyRates() {
+        ratesFetched = false
+        error = nil
+        fetchCurrencyRates()
+    }
+
     private func fetchCurrencyRates() {
         Currency.currencies.forEach { currency in
             getLatestRateForBase(base: currency.name)

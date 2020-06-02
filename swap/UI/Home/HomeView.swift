@@ -13,6 +13,7 @@ struct HomeView: View {
     @ObservedObject var model: HomeViewModel = HomeViewModel()
 
     @State private var showCurrencySelection: Bool = false
+    @State private var showErrorAlert: Bool = false
     @State private var exchange: Exchange = Exchange(
         primary: Currency(name: "NOK", fullName: "Norwegian Kroners", continent: .Europe),
         secondary: Currency(name: "USD", fullName: "United States Dollars", continent: .NorthAmerica)
@@ -41,6 +42,26 @@ struct HomeView: View {
                                 self.storeRatesLocally()
                                 self.updateExchanges()
                             }
+                        }
+                }
+
+                // On Result Error
+                if self.model.error != nil {
+                    Text("")
+                        .frame(width: 0, height: 0)
+                        .onAppear {
+                            self.showErrorAlert = true
+                        }
+                        .alert(isPresented: self.$showErrorAlert) {
+                            Alert(
+                                title: Text("Something went wrong"), 
+                                message: Text("Failed to download latest currency rates. Please check your internet connection"),
+                                primaryButton: .default(Text("Retry")) {
+                                    self.showErrorAlert = false
+                                    self.model.reFetchCurrencyRates()
+                                },
+                                secondaryButton: .cancel()
+                            )
                         }
                 }
 

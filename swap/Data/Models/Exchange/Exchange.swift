@@ -39,7 +39,7 @@ struct Exchange {
                 }
             case -2:
                 if primaryValueDisplay.count <= 1 {
-                    primaryValueDisplay = "0"
+                    primaryValueDisplay = Exchange.primaryEmpty
                 } else {
                     primaryValueDisplay = String(primaryValueDisplay.dropLast())
                 }
