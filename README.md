@@ -21,7 +21,9 @@ The project makes use of the following feature;
 
 **Screenshots**
 
-Coming son
+| Splash | Home | Currency Selection |
+| ------------- | ------------- | ------------ |
+| ![](https://raw.githubusercontent.com/MaxHvesser/swap-ios/master/images/screen_splash.png)  | ![](https://raw.githubusercontent.com/MaxHvesser/swap-ios/master/images/screen_home.png) | ![](https://raw.githubusercontent.com/MaxHvesser/swap-ios/master/images/screen_currency_selection.png) | 
 
 **Download**
 
