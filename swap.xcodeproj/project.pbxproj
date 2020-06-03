@@ -29,6 +29,7 @@
 		B488C0F2746FEE8505269DA4 /* ExchangeRatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488C2F8D807FBB35379F461 /* ExchangeRatesService.swift */; };
 		B488C6BEA2352029D155594B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488CAE9DE750219B2C18E83 /* ApiClient.swift */; };
 		B488C89B0DB2BE85CDA9AB46 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488CE63302DC0EB05B1F6E9 /* StringExtension.swift */; };
+		D812128F24875EF0006299AA /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812128E24875EF0006299AA /* SplashView.swift */; };
 		D87FEB352464829F005BAFB4 /* SwapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D87FEB332464829F005BAFB4 /* SwapModel.xcdatamodeld */; };
 		D8CE5C3724766647005DA416 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE5C3624766647005DA416 /* DictionaryExtensions.swift */; };
 		D8DEF4F12486B47500F6E5B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8DEF4F32486B47500F6E5B7 /* Localizable.strings */; };
@@ -59,6 +60,7 @@
 		B488C2F8D807FBB35379F461 /* ExchangeRatesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesService.swift; sourceTree = "<group>"; };
 		B488CAE9DE750219B2C18E83 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		B488CE63302DC0EB05B1F6E9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D812128E24875EF0006299AA /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D87FEB342464829F005BAFB4 /* SwapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwapModel.xcdatamodel; sourceTree = "<group>"; };
 		D8B3AC8C2486D5360051E9B2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D8B3AC8E2486D53C0051E9B2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		50CEF2022429040100DDCAC3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D812128D24875ED9006299AA /* Splash */,
 				506E36DD243B21B900B2E616 /* Currency Selection  */,
 				50CEF206242907E300DDCAC3 /* Views */,
 				50CEF2032429040D00DDCAC3 /* Home */,
@@ -238,6 +241,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		D812128D24875ED9006299AA /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				D812128E24875EF0006299AA /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		D8CE5C352476662D005DA416 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C181552430C90D0078536E /* HomeViewModel.swift in Sources */,
+				D812128F24875EF0006299AA /* SplashView.swift in Sources */,
 				50CEF1EF2429002C00DDCAC3 /* AppDelegate.swift in Sources */,
 				50F4A13C242E20D70010C37D /* Rate.swift in Sources */,
 				50CEF2052429042100DDCAC3 /* HomeView.swift in Sources */,

@@ -28,14 +28,26 @@ extension Color {
 struct ContentView: View {
 
     @Environment(\.managedObjectContext) var managedObjectContext
+    @State var showSplash = true
     
     var body: some View {
         
         ZStack {
             
-            // Home View 
+            // Home
             HomeView()
                     .environment(\.managedObjectContext, managedObjectContext)
+            
+            // Splash
+            SplashView()
+                .opacity(showSplash ? 1 : 0)
+                .onAppear() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        withAnimation() {
+                            self.showSplash = false
+                        }
+                    }
+                }
             
         }
         
@@ -46,11 +58,4 @@ class ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-
-    #if DEBUG
-    @objc class func injected() {
-        UIApplication.shared.windows.first?.rootViewController =
-                UIHostingController(rootView: ContentView_Previews.previews)
-    }
-    #endif
 }

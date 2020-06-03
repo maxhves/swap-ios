@@ -38,4 +38,7 @@ struct ViewConstants {
     static let swapIconSize: CGFloat = 18
     static let swapFontSize: CGFloat = 20
     
+    // MARK: Splash
+    static let splashIconSize: CGFloat = 120
+    
 }
