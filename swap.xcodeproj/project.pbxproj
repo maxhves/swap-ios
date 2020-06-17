@@ -31,7 +31,6 @@
 		B488C89B0DB2BE85CDA9AB46 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488CE63302DC0EB05B1F6E9 /* StringExtension.swift */; };
 		D812128F24875EF0006299AA /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812128E24875EF0006299AA /* SplashView.swift */; };
 		D87FEB352464829F005BAFB4 /* SwapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D87FEB332464829F005BAFB4 /* SwapModel.xcdatamodeld */; };
-		D8CE5C3724766647005DA416 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE5C3624766647005DA416 /* DictionaryExtensions.swift */; };
 		D8DEF4F12486B47500F6E5B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8DEF4F32486B47500F6E5B7 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +63,6 @@
 		D87FEB342464829F005BAFB4 /* SwapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwapModel.xcdatamodel; sourceTree = "<group>"; };
 		D8B3AC8C2486D5360051E9B2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D8B3AC8E2486D53C0051E9B2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D8CE5C3624766647005DA416 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		D8DEF4F22486B47500F6E5B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D8DEF4F42486B47900F6E5B7 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,7 +250,6 @@
 		D8CE5C352476662D005DA416 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D8CE5C3624766647005DA416 /* DictionaryExtensions.swift */,
 				B488CE63302DC0EB05B1F6E9 /* StringExtension.swift */,
 			);
 			path = Extensions;
@@ -344,7 +341,6 @@
 				50ED83F4242A2BA800878CB6 /* ViewConstants.swift in Sources */,
 				50CEF20B24290A9500DDCAC3 /* GridStack.swift in Sources */,
 				50E531B224337CE60052972A /* ExchangeDisplayDetail.swift in Sources */,
-				D8CE5C3724766647005DA416 /* DictionaryExtensions.swift in Sources */,
 				50CEF1F12429002C00DDCAC3 /* SceneDelegate.swift in Sources */,
 				506E36E3243B31B300B2E616 /* CurrencySelectionRow.swift in Sources */,
 				507D61222437874A00729CE3 /* CurrencySwap.swift in Sources */,
