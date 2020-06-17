@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="background"/>
+                        <color key="backgroundColor" name="backgroundAccent"/>
                         <constraints>
                             <constraint firstItem="oW4-5e-X9a" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dfG-JJ-6Ow"/>
                             <constraint firstItem="oW4-5e-X9a" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="w7B-J0-izA"/>
@@ -34,13 +34,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442" y="370"/>
+            <point key="canvasLocation" x="29" y="315"/>
         </scene>
     </scenes>
     <resources>
         <image name="swap_branding_icon" width="464" height="464"/>
-        <namedColor name="background">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="backgroundAccent">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

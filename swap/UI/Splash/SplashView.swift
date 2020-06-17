@@ -21,7 +21,7 @@ struct SplashView: View {
                 
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
-            .background(Color.background)
+            .background(Color.backgroundAccent)
             
         }
         .edgesIgnoringSafeArea(.all)
