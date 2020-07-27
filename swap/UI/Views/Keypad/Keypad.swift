@@ -24,7 +24,7 @@ struct Keypad: View {
                 }) {
                     if (row * ViewConstants.keypadColumns + column) == 11 {
                         Image(systemName: "delete.left.fill")
-                            .foregroundColor(Color.keypadKey)
+                            .foregroundColor(Color.textPrimary)
                             .frame(
                                 width: geometry.size.width / 3,
                                 height: (geometry.size.height - ViewConstants.keypadPadding) / 4
@@ -39,10 +39,10 @@ struct Keypad: View {
                         Text("\(self.keys[row * ViewConstants.keypadColumns + column])")
                             .font(.system(
                                 size: ViewConstants.keyFontSize,
-                                weight: .semibold,
-                                design: .rounded)
+                                weight: .medium,
+                                design: .monospaced)
                             )
-                            .foregroundColor(Color.keypadKey)
+                            .foregroundColor(Color.textPrimary)
                             .frame(
                                 width: geometry.size.width / 3,
                                 height: (geometry.size.height - ViewConstants.keypadPadding) / 4

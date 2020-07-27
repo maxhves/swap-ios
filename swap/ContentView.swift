@@ -23,6 +23,8 @@ extension Color {
     static let swapPrimary = Color("swapPrimary")
     static let swapSecondary = Color("swapSecondary")
     
+    static let textPrimary = Color("textPrimary")
+    
 }
 
 struct ContentView: View {

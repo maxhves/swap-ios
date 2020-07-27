@@ -66,22 +66,22 @@ struct HomeView: View {
                 }
 
                 // Currency Swap
-                CurrencySwap(
-                    showCurrencySelection: self.$showCurrencySelection,
-                    selection: self.$selection,
-                    exchange: self.$exchange)
-                    .padding(.bottom, ViewConstants.medium)
-                    .sheet(isPresented: self.$showCurrencySelection) {
-                        CurrencySelectionView(
-                            showCurrencySelection: self.$showCurrencySelection,
-                            exchange: self.$exchange,
-                            selection: self.$selection)
-                            .onDisappear {
-                                DispatchQueue.main.async {
-                                    self.updateExchanges()
-                                }
-                            }
-                    }
+//                CurrencySwap(
+//                    showCurrencySelection: self.$showCurrencySelection,
+//                    selection: self.$selection,
+//                    exchange: self.$exchange)
+//                    .padding(.bottom, ViewConstants.medium)
+//                    .sheet(isPresented: self.$showCurrencySelection) {
+//                        CurrencySelectionView(
+//                            showCurrencySelection: self.$showCurrencySelection,
+//                            exchange: self.$exchange,
+//                            selection: self.$selection)
+//                            .onDisappear {
+//                                DispatchQueue.main.async {
+//                                    self.updateExchanges()
+//                                }
+//                            }
+//                    }
 
                 // Keypad
                 Keypad(exchange: self.$exchange)

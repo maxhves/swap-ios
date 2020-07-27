@@ -20,7 +20,7 @@ struct ViewConstants {
     // MARK: Font Size
     static let fontBody: CGFloat = 16
     static let primaryDisplaySize: CGFloat = 36
-    static let primaryDisplayNameSize: CGFloat = 18
+    static let primaryDisplayNameSize: CGFloat = 12
     static let secondaryDisplaySize: CGFloat = 30
     static let secondaryDisplayNameSize: CGFloat = 16
     
@@ -28,8 +28,8 @@ struct ViewConstants {
     static let keypadPadding: CGFloat = 24
     static let keypadRows: Int = 4
     static let keypadColumns: Int = 3
-    static let keypadHeightRatio: CGFloat = 2.5
-    static let keyFontSize: CGFloat = 21
+    static let keypadHeightRatio: CGFloat = 2.8
+    static let keyFontSize: CGFloat = 20
     
     // MARK: Currency Swap
     static let swapButtonHeight: CGFloat = 48
@@ -37,6 +37,13 @@ struct ViewConstants {
     static let swapButtonBorderWidth: CGFloat = 2
     static let swapIconSize: CGFloat = 18
     static let swapFontSize: CGFloat = 20
+    
+    static let swapButtonSize: CGFloat = 56
+    
+    // MARK: Currency Display
+    static let displayChevronWidth: CGFloat = 6
+    static let displayChevronHeight: CGFloat = 10
+    
     
     // MARK: Splash
     static let splashIconSize: CGFloat = 120

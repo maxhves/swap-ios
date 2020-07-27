@@ -17,19 +17,28 @@ struct ExchangeDisplayDetail: View {
             Text("\(value)")
                 .font(.system(
                     size: ViewConstants.primaryDisplaySize,
-                    weight: .semibold,
-                    design: .rounded)
+                    weight: .medium,
+                    design: .monospaced)
                 )
-                .foregroundColor(Color.textBody)
-            Text("\(name)")
-                .font(.system(
-                    size: ViewConstants.primaryDisplayNameSize,
-                    weight: .semibold,
-                    design: .rounded)
-                )
-                .foregroundColor(Color.textBody)
-        }
+                .foregroundColor(Color.textPrimary)
+            HStack {
+                Text("\(name)")
+                    .font(.system(
+                        size: ViewConstants.primaryDisplayNameSize,
+                        weight: .light,
+                        design: .monospaced)
+                    )
+                    .foregroundColor(Color.textBody)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .foregroundColor(Color.textSecondary)
+                    .frame(width: ViewConstants.displayChevronWidth, height: ViewConstants.displayChevronHeight)
+            }
+        }  
         .padding(ViewConstants.large)
+        .padding(.bottom, 28)
+        .padding(.top, 28)
     }
 }
 
