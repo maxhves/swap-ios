@@ -27,6 +27,12 @@ struct CurrencySelectionView: View {
                     ForEach(currencies) { section in
                         Section(header:
                             Text(section.title)
+                                .font(.system(
+                                    size: ViewConstants.fontSmall,
+                                    weight: .medium,
+                                    design: .monospaced)
+                                )
+                                .foregroundColor(Color.textSecondary)
                                 .padding(.top, section.title == "Africa" ? ViewConstants.medium : 0)
                         ) {
                             ForEach(section.currencies) { currency in

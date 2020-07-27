@@ -17,6 +17,7 @@ extension Color {
     static let textSecondary = Color("textSecondary")
     static let textStrong = Color("textStrong")
     static let textLight = Color("textLight")
+    static let textMedium = Color("textMedium")
     static let keypadKey = Color("keypadKey")
     
     static let swapButton = Color("swapButton")

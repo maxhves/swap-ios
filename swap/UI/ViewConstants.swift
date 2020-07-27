@@ -19,6 +19,9 @@ struct ViewConstants {
     
     // MARK: Font Size
     static let fontBody: CGFloat = 16
+    static let fontMedium: CGFloat = 14
+    static let fontSmall: CGFloat = 12
+    
     static let primaryDisplaySize: CGFloat = 36
     static let primaryDisplayNameSize: CGFloat = 12
     static let secondaryDisplaySize: CGFloat = 30
@@ -44,6 +47,8 @@ struct ViewConstants {
     static let displayChevronWidth: CGFloat = 6
     static let displayChevronHeight: CGFloat = 10
     
+    // MARK: Currency Selection
+    static let selectionFlagSize: CGFloat = 16
     
     // MARK: Splash
     static let splashIconSize: CGFloat = 120

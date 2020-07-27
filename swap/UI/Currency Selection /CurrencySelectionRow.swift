@@ -16,22 +16,22 @@ struct CurrencySelectionRow: View {
         HStack {
             Text("\(currency.name)")
             .font(.system(
-                size: ViewConstants.fontBody,
+                size: ViewConstants.fontMedium,
                 weight: .bold,
-                design: .rounded)
+                design: .monospaced)
             )
-            .foregroundColor(Color.textStrong)
+            .foregroundColor(Color.textPrimary)
             Spacer()
             Text("\(currency.fullName)")
                 .font(.system(
-                    size: ViewConstants.fontBody,
-                    weight: .medium,
-                    design: .rounded)
+                    size: ViewConstants.fontSmall,
+                    weight: .regular,
+                    design: .monospaced)
                 )
-                .foregroundColor(Color.textBody)
+                .foregroundColor(Color.textMedium)
             Image("\(currency.name.lowercased())")
                 .resizable()
-                .frame(width: 16, height: 16)
+                .frame(width: ViewConstants.selectionFlagSize, height: ViewConstants.selectionFlagSize)
         }
         .contentShape(Rectangle())
     }
