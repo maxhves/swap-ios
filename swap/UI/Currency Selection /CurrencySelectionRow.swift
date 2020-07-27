@@ -13,7 +13,7 @@ struct CurrencySelectionRow: View {
     var currency: Currency
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             Text("\(currency.name)")
             .font(.system(
                 size: ViewConstants.fontMedium,
@@ -29,6 +29,7 @@ struct CurrencySelectionRow: View {
                     design: .monospaced)
                 )
                 .foregroundColor(Color.textMedium)
+                .padding(.trailing, ViewConstants.regular)
             Image("\(currency.name.lowercased())")
                 .resizable()
                 .frame(width: ViewConstants.selectionFlagSize, height: ViewConstants.selectionFlagSize)
