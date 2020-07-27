@@ -6,6 +6,8 @@
   Copyright © 2020 Hvesser. All rights reserved.
 */
 
+"SwapTitle" = "swap";
+
 "ErrorNetTitle" = "Er ging iets mis";
 "ErrorNetBody" = "Koersdata kon niet worden gedownload. Controleer je internetverbinding en probeer het later opnieuw";
 "ErrorBack" = "Terug";

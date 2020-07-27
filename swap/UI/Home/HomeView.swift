@@ -28,8 +28,20 @@ struct HomeView: View {
         GeometryReader { geometry in
 
             VStack(spacing: 0) {
+                
+                // MARK: Title
+                Text("SwapTitle")
+                    .font(.system(
+                        size: ViewConstants.fontBody,
+                        weight: .light,
+                        design: .monospaced)
+                    )
+                    .foregroundColor(Color.textLight)
+                    .frame(width: geometry.size.width)
+                    .padding(.top, geometry.safeAreaInsets.top)
+                    .background(Color.white)
 
-                // Exchange Display
+                // MARK: Exchange Display
                 ExchangeDisplay(exchange: self.$exchange)
 
                 // On Results Fetched
@@ -45,7 +57,7 @@ struct HomeView: View {
                         }
                 }
 
-                // On Result Error
+                // MARK: On Result Error
                 if self.model.error != nil {
                     Text("")
                         .frame(width: 0, height: 0)
@@ -83,7 +95,7 @@ struct HomeView: View {
 //                            }
 //                    }
 
-                // Keypad
+                // MARK: Keypad
                 Keypad(exchange: self.$exchange)
                     .background(Color.backgroundAccent)
                     .cornerRadius(ViewConstants.large)

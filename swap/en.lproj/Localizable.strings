@@ -6,6 +6,8 @@
   Copyright © 2020 Hvesser. All rights reserved.
 */
 
+"SwapTitle" = "swap";
+
 "ErrorNetTitle" = "Something went wrong";
 "ErrorNetBody" = "Failed to download latest currency rates. Please check your internet connection";
 "ErrorBack" = "Back";

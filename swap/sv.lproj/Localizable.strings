@@ -6,6 +6,8 @@
   Copyright © 2020 Hvesser. All rights reserved.
 */
 
+"SwapTitle" = "swap";
+
 "ErrorNetTitle" = "Något gick fel";
 "ErrorNetBody" = "Det gick inte att ladda ner de senaste växelkurserna. Kontrollera din internetanslutning";
 "ErrorBack" = "Tillbaka";

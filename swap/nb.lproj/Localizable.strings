@@ -6,6 +6,8 @@
   Copyright © 2020 Hvesser. All rights reserved.
 */
 
+"SwapTitle" = "swap";
+
 "ErrorNetTitle" = "Noe gikk galt";
 "ErrorNetBody" = "Kunne ikke laste ned de nyeste valutakursene. Vennligst sjekk internettforbindelsen din";
 "ErrorBack" = "Tilbake";
