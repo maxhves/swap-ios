@@ -42,7 +42,22 @@ struct HomeView: View {
                     .background(Color.white)
 
                 // MARK: Exchange Display
-                ExchangeDisplay(exchange: self.$exchange)
+                ExchangeDisplay(
+                    exchange: self.$exchange,
+                    showCurrencySelection: self.$showCurrencySelection,
+                    selection: self.$selection
+                )
+                .sheet(isPresented: self.$showCurrencySelection) {
+                    CurrencySelectionView(
+                        showCurrencySelection: self.$showCurrencySelection,
+                        exchange: self.$exchange,
+                        selection: self.$selection)
+                        .onDisappear {
+                            DispatchQueue.main.async {
+                                self.updateExchanges()
+                            }
+                        }
+                }
 
                 // On Results Fetched
                 if self.model.ratesFetched {
@@ -78,22 +93,11 @@ struct HomeView: View {
                 }
 
                 // Currency Swap
-//                CurrencySwap(
-//                    showCurrencySelection: self.$showCurrencySelection,
-//                    selection: self.$selection,
-//                    exchange: self.$exchange)
-//                    .padding(.bottom, ViewConstants.medium)
-//                    .sheet(isPresented: self.$showCurrencySelection) {
-//                        CurrencySelectionView(
-//                            showCurrencySelection: self.$showCurrencySelection,
-//                            exchange: self.$exchange,
-//                            selection: self.$selection)
-//                            .onDisappear {
-//                                DispatchQueue.main.async {
-//                                    self.updateExchanges()
-//                                }
-//                            }
-//                    }
+                CurrencySwap(
+                    showCurrencySelection: self.$showCurrencySelection,
+                    selection: self.$selection,
+                    exchange: self.$exchange)
+                    .padding(.bottom, ViewConstants.medium)
 
                 // MARK: Keypad
                 Keypad(exchange: self.$exchange)

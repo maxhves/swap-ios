@@ -11,12 +11,14 @@ import SwiftUI
 struct ExchangeDisplay: View {
     
     @Binding var exchange: Exchange
+    @Binding var showCurrencySelection: Bool
+    @Binding var selection: String
     
     var body: some View {
         
         GeometryReader { geometry in
             
-            ZStack {
+            ZStack{
                 VStack(spacing: 0) {
                     
                     // Primary
@@ -24,6 +26,9 @@ struct ExchangeDisplay: View {
                         VStack {
                             Spacer()
                             ExchangeDisplayDetail(value: "\(self.exchange.primaryValueDisplay)", name: self.exchange.primary.fullName)
+                                .onTapGesture() {
+                                    self.openCurrencySelection("primary")
+                                }
                         }
                         Spacer()
                     }
@@ -33,6 +38,9 @@ struct ExchangeDisplay: View {
                     HStack {
                         VStack {
                             ExchangeDisplayDetail(value: "\(self.exchange.secondaryValueDisplay)", name: self.exchange.secondary.fullName)
+                                .onTapGesture {
+                                    self.openCurrencySelection("secondary")
+                                }
                             Spacer()
                         }
                         Spacer()
@@ -59,6 +67,11 @@ struct ExchangeDisplay: View {
         
     }
     
+    func openCurrencySelection(_ selection: String) {
+        self.selection = selection
+        self.showCurrencySelection.toggle()
+    }
+    
 }
 
 struct ExchangeDisplay_Previews: PreviewProvider {
@@ -67,7 +80,9 @@ struct ExchangeDisplay_Previews: PreviewProvider {
             exchange: .constant(Exchange(
                 primary: Currency(name: "NOK", fullName: "Norwegian Kroners", continent: .Europe),
                 secondary: Currency(name: "USD", fullName: "United States Dollars", continent: .NorthAmerica)
-            ))
+            )),
+            showCurrencySelection: .constant(false),
+            selection: .constant("primary")
         )
         .background(Color.background)
     }
