@@ -42,10 +42,12 @@ struct ViewConstants {
     static let swapFontSize: CGFloat = 20
     
     static let swapButtonSize: CGFloat = 56
+    static let swapButtonPadding: CGFloat = swapButtonSize / 2
     
     // MARK: Currency Display
     static let displayChevronWidth: CGFloat = 6
     static let displayChevronHeight: CGFloat = 10
+    static let swapOffset: CGFloat = 178
     
     // MARK: Currency Selection
     static let selectionFlagSize: CGFloat = 16

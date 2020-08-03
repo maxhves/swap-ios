@@ -14,6 +14,9 @@ struct ExchangeDisplay: View {
     @Binding var showCurrencySelection: Bool
     @Binding var selection: String
     
+    @State var swapped: Bool = false
+    @State var offsetY: CGFloat = 0.0
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -29,6 +32,7 @@ struct ExchangeDisplay: View {
                                 .onTapGesture() {
                                     self.openCurrencySelection("primary")
                                 }
+                                .offset(y: self.offsetY)
                         }
                         Spacer()
                     }
@@ -41,6 +45,7 @@ struct ExchangeDisplay: View {
                                 .onTapGesture {
                                     self.openCurrencySelection("secondary")
                                 }
+                                .offset(y: -self.offsetY)
                             Spacer()
                         }
                         Spacer()
@@ -50,7 +55,15 @@ struct ExchangeDisplay: View {
                 
                 // Swap Button
                 Button(action: {
-                    // TODO Swap the detail views
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        if !self.swapped {
+                            self.offsetY = ViewConstants.swapOffset
+                            self.swapped = true
+                        } else {
+                            self.offsetY = 0
+                            self.swapped = false
+                        }
+                    }
                 }) {
                     Image(systemName: "arrow.2.squarepath")
                         .foregroundColor(Color.white)

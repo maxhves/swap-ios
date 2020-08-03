@@ -37,8 +37,8 @@ struct ExchangeDisplayDetail: View {
             }
         }  
         .padding(ViewConstants.large)
-        .padding(.bottom, 28)
-        .padding(.top, 28)
+        .padding(.bottom, ViewConstants.swapButtonPadding)
+        .padding(.top, ViewConstants.swapButtonPadding)
     }
 }
 
