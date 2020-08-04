@@ -55,6 +55,7 @@ struct HomeView: View {
                         .onDisappear {
                             DispatchQueue.main.async {
                                 self.updateExchanges()
+                                self.exchange.refreshConverstion()
                             }
                         }
                 }

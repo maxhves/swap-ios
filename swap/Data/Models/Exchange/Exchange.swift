@@ -75,5 +75,11 @@ extension Exchange {
         primaryValueDisplay = Exchange.primaryEmpty
         secondaryValueDisplay = Exchange.secondaryEmpty
     }
+    
+    mutating func refreshConverstion() {
+        let currentVal = self.currentValue
+        clear()
+        self.currentValue = currentVal
+    }
 
 }
