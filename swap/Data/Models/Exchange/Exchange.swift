@@ -22,37 +22,43 @@ struct Exchange {
     var primaryRate: Rate? = nil
     var secondaryRate: Rate? = nil
     
+    var swapped: Bool = false {
+        didSet {
+            
+        }
+    }
+    
     var currentValue: Decimal = 0.0 {
         didSet {
-            if primaryValueDisplay == "0" {
-                primaryValueDisplay = ""
+            if focussedValueDisplay == "0" {
+                focussedValueDisplay = ""
             }
 
             switch self.currentValue {
             case -1:
-                if !primaryValueDisplay.contains(".") {
-                    if primaryValueDisplay.count == 0 {
-                        primaryValueDisplay = "0."
+                if !focussedValueDisplay.contains(".") {
+                    if focussedValueDisplay.count == 0 {
+                        focussedValueDisplay = "0."
                     } else {
-                        primaryValueDisplay += "."
+                        focussedValueDisplay += "."
                     }
                 }
             case -2:
-                if primaryValueDisplay.count <= 1 {
-                    primaryValueDisplay = Exchange.primaryEmpty
+                if focussedValueDisplay.count <= 1 {
+                    focussedValueDisplay = Exchange.primaryEmpty
                 } else {
-                    primaryValueDisplay = String(primaryValueDisplay.dropLast())
+                    focussedValueDisplay = String(focussedValueDisplay.dropLast())
                 }
             default:
-                primaryValueDisplay += "\(self.currentValue)"
+                focussedValueDisplay += "\(self.currentValue)"
             }
             
-            let primaryValue = Decimal(string: primaryValueDisplay)
+            let primaryValue = Decimal(string: focussedValueDisplay)
 
             let finalValue = ((primaryValue ?? 0) * conversionRate())
             let finalValueDouble = Double(exactly: finalValue as NSDecimalNumber) ?? 0.0
 
-            secondaryValueDisplay = String(format: "%.2f", finalValueDouble)
+            unfocussedValueDisplay = String(format: "%.2f", finalValueDouble)
         }
     }
     
@@ -63,17 +69,52 @@ struct Exchange {
 
 extension Exchange {
 
+    private var focussedValueDisplay: String {
+        get {
+            return (swapped) ? secondaryValueDisplay : primaryValueDisplay
+        }
+        set {
+            if (swapped) {
+                secondaryValueDisplay = newValue
+            } else {
+                primaryValueDisplay = newValue
+            }
+        }
+    }
+    
+    private var unfocussedValueDisplay: String {
+        get {
+            return (swapped) ? primaryValueDisplay : secondaryValueDisplay
+        }
+        set {
+            if (swapped) {
+                primaryValueDisplay = newValue
+            } else {
+                secondaryValueDisplay = newValue
+            }
+        }
+    }
+    
     // MARK: Transformations
     private func conversionRate() -> Decimal {
-        guard let result = (primaryRate?.rates.first { rate in rate.key == secondary.name }?.value) else {
+        guard let result =
+            (swapped) ?
+                (secondaryRate?.rates.first { rate in rate.key == primary.name }?.value) :
+                (primaryRate?.rates.first { rate in rate.key == secondary.name }?.value) else {
             return 0.0
         }
         return result
     }
 
     mutating func clear() {
-        primaryValueDisplay = Exchange.primaryEmpty
-        secondaryValueDisplay = Exchange.secondaryEmpty
+        primaryValueDisplay = (swapped) ? Exchange.secondaryEmpty : Exchange.primaryEmpty
+        secondaryValueDisplay = (swapped) ? Exchange.primaryEmpty : Exchange.secondaryEmpty
+    }
+    
+    mutating func resetToInitial() {
+        if (primaryValueDisplay == Exchange.primaryEmpty || primaryValueDisplay == Exchange.secondaryEmpty) {
+            clear()
+        }
     }
     
     mutating func refreshConverstion() {

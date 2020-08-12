@@ -59,10 +59,13 @@ struct ExchangeDisplay: View {
                         if !self.swapped {
                             self.offsetY = ViewConstants.swapOffset
                             self.swapped = true
+                            self.exchange.swapped = true
                         } else {
                             self.offsetY = 0
                             self.swapped = false
+                            self.exchange.swapped = false
                         }
+                        self.exchange.resetToInitial()
                     }
                 }) {
                     Image(systemName: "arrow.2.squarepath")
