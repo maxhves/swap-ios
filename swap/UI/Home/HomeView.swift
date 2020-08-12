@@ -92,14 +92,7 @@ struct HomeView: View {
                             )
                         }
                 }
-
-                // Currency Swap
-//                CurrencySwap(
-//                    showCurrencySelection: self.$showCurrencySelection,
-//                    selection: self.$selection,
-//                    exchange: self.$exchange)
-//                    .padding(.bottom, ViewConstants.medium)
-
+                
                 // MARK: Keypad
                 Keypad(exchange: self.$exchange)
                     .background(Color.backgroundAccent)
