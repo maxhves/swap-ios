@@ -15,7 +15,7 @@ struct HomeView: View {
     @State private var showCurrencySelection: Bool = false
     @State private var showErrorAlert: Bool = false
     @State private var exchange: Exchange = Exchange(
-        primary: Currency(name: "NOK", fullName: "NorwegianKroner".localized(), continent: .Europe),
+        primary: Currency(name: "EUR", fullName: "Euros".localized(), continent: .Europe),
         secondary: Currency(name: "USD", fullName: "UnitedStatesDollars".localized(), continent: .NorthAmerica)
     )
     @State private var selection: String = "primary"
